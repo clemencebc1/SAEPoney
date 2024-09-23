@@ -44,4 +44,14 @@ VALUES
   ("Cunningham","Guy","integer@outlook.couk","2000/10/17",22,"694-4152 Nulla Ave Orléans","07 13 67 08 22"),
   ("Harris","Graiden","aliquam.ultrices@icloud.edu","2013/04/17",21,"8259 Sed Rd. Orléans","04 35 48 85 24");
 
+INSERT INTO ADHERENT values (1,STR_TO_DATE("14/05/2025", "%d/%m/%Y"));
+INSERT INTO ADHERENT values (2,STR_TO_DATE("17/05/2025", "%d/%m/%Y"));
+INSERT INTO ADHERENT values (3,STR_TO_DATE("20/05/2025", "%d/%m/%Y"));
+INSERT INTO ADHERENT values (4,STR_TO_DATE("04/06/2025", "%d/%m/%Y"));
+INSERT INTO ADHERENT values (5,STR_TO_DATE("05/06/2025", "%d/%m/%Y"));
+INSERT INTO ADHERENT values (6,STR_TO_DATE("11/06/2025", "%d/%m/%Y"));
+
+INSERT INTO MONITEUR values (10,"CDD",STR_TO_DATE("11/02/2024", "%d/%m/%Y"));
+INSERT INTO MONITEUR values (11,"CDD",STR_TO_DATE("22/03/2024", "%d/%m/%Y"));
+INSERT INTO MONITEUR values (10,"CDI",STR_TO_DATE("15/01/2024", "%d/%m/%Y"));
 
