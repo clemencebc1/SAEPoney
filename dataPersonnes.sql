@@ -59,3 +59,5 @@ VALUES
   ("Craft","Castor","nunc.interdum@aol.ca","2010/14/01",22,"Ap #194-2936 Risus. St.","Piedecuesta","05 77 48 22 77"),
   ("Cunningham","Guy","integer@outlook.couk","2000/20/17",22,"694-4152 Nulla Ave","Guarulhos","07 13 67 08 22"),
   ("Harris","Graiden","aliquam.ultrices@icloud.edu","2013/27/17",21,"8259 Sed Rd.","Cherkasy","04 35 48 85 24");
+
+
