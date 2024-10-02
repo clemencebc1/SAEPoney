@@ -70,7 +70,7 @@ Insert into COURS (NOMCOURS, DUREE, TYPEC) values ('Dressage', 1, 2),
 ('CSO', 1.5, 2),
 ('Groom', 2, 2);
 
-Insert into PONEY (IDPO, NOMPO, DDNPO, POIDS_MAX, RACE, GENRE) values 
+Insert into PONEY (IDPO, NOMPO, DDNPO, POIDS_MAX, RACE, SEXE) values 
 ('Didi', STR_TO_DATE("12/12/2018", "%d/%m/%Y"), 46, 'Shetland', 1),
 ('Patrick', STR_TO_DATE("28/02/2017", "%d/%m/%Y"), 51, 'Shetland', 2),
 ('Tituan', STR_TO_DATE("23/06/2015", "%d/%m/%Y"), 45, 'Fjord', 2),
