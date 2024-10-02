@@ -17,7 +17,7 @@ CREATE TABLE PONEY(
     DDNPO DATE,
     POIDS_MAX INT(3) NOT NULL, -- un poney supporte un poids max 
     RACE VARCHAR(20),
-    GENRE enum('F', 'H')
+    SEXE enum('F', 'M')
 );
 
 CREATE TABLE COURS (
