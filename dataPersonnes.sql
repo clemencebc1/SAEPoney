@@ -51,24 +51,26 @@ VALUES
 
 
 
-INSERT INTO ADHERENT values (1,STR_TO_DATE("14/05/2025", "%d/%m/%Y"));
-INSERT INTO ADHERENT values (2,STR_TO_DATE("17/05/2025", "%d/%m/%Y"));
-INSERT INTO ADHERENT values (3,STR_TO_DATE("20/05/2025", "%d/%m/%Y"));
-INSERT INTO ADHERENT values (4,STR_TO_DATE("04/06/2025", "%d/%m/%Y"));
-INSERT INTO ADHERENT values (5,STR_TO_DATE("05/06/2025", "%d/%m/%Y"));
-INSERT INTO ADHERENT values (6,STR_TO_DATE("11/06/2025", "%d/%m/%Y"));
+INSERT INTO ADHERENT values (1,STR_TO_DATE("14/05/2025", "%d/%m/%Y"),1);
+INSERT INTO ADHERENT values (2,STR_TO_DATE("17/05/2025", "%d/%m/%Y"),2);
+INSERT INTO ADHERENT values (3,STR_TO_DATE("20/05/2025", "%d/%m/%Y"),3);
+INSERT INTO ADHERENT values (4,STR_TO_DATE("04/06/2025", "%d/%m/%Y"),3);
+INSERT INTO ADHERENT values (5,STR_TO_DATE("05/06/2025", "%d/%m/%Y"),4);
+INSERT INTO ADHERENT values (6,STR_TO_DATE("11/06/2025", "%d/%m/%Y"),5);
 
 INSERT INTO MONITEUR values (11,"CDD",STR_TO_DATE("11/02/2024", "%d/%m/%Y"));
 INSERT INTO MONITEUR values (12,"CDD",STR_TO_DATE("22/03/2024", "%d/%m/%Y"));
 INSERT INTO MONITEUR values (13,"CDI",STR_TO_DATE("15/01/2024", "%d/%m/%Y"));
 
-Insert into COURS (NOMCOURS, DUREE, TYPEC) values ('Dressage', 1, 2), 
-('Dressage', 1.5, 1),
-('Attelage', 1.1, 1),
-('Endurance', 1.5, 1),
-('CSO', 2, 1),
-('CSO', 1.5, 2),
-('Groom', 2, 2);
+Insert into COURS (NOMCOURS, TYPEC) values ('Dressage', 1, 2), 
+('Dressage', 1),
+('Attelage', 1),
+('Endurance', 1),
+('CSO', 1),
+('CSO', 2),
+('Groom', 2);
+
+Insert into SEANCE (IDSEANCE,PRIX,NIVEAU,DESCRIPTIF,DUREE,GROUPE_AGE,NUMCOURS, DATE_SEANCE) values ();
 
 Insert into PONEY (IDPO, NOMPO, DDNPO, POIDS_MAX, RACE, SEXE) values 
 ('Didi', STR_TO_DATE("12/12/2018", "%d/%m/%Y"), 46, 'Shetland', 1),
