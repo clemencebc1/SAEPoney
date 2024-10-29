@@ -81,4 +81,14 @@ Insert into PONEY (NOMPO, DDNPO, POIDS_MAX, RACE, SEXE) values
 
 Insert into SEANCE (IDSEANCE, PRIX, DUREE, NIVEAU, DESCRIPTIF, GROUPE_AGE, NUMCOURS, DATE_SEANCE) 
 values (1, 25, 1.1, 1, "baby poney", "moins de 6 ans", 6, STR_TO_DATE("16/10/2024:14/10","%d/%m/%Y:%H/%i")),
-(2, 35, 1.2,1, "baby grand poney", "plus de 6 ans - moins de 10 ans", 6,STR_TO_DATE("16/10/2024:10/00","%d/%m/%Y:%H/%i"));
+(2, 35, 1.2,1, "baby grand poney", "plus de 6 ans - moins de 10 ans", 6,STR_TO_DATE("16/10/2024:10/00","%d/%m/%Y:%H/%i")),
+(3, 27, 1.5,2, "grand poney", "plus de 8 ans - moins de 12 ans", 6,STR_TO_DATE("17/10/2024:10/00","%d/%m/%Y:%H/%i")),
+(4, 25, 1.1, 1, "baby poney", "moins de 6 ans", 6, STR_TO_DATE("23/10/2024:14/10","%d/%m/%Y:%H/%i")),
+(5, 35, 1.2,1, "baby grand poney", "plus de 6 ans - moins de 10 ans", 6,STR_TO_DATE("23/10/2024:10/00","%d/%m/%Y:%H/%i")),
+(6, 27, 1.5,2, "grand poney", "plus de 8 ans - moins de 12 ans", 6,STR_TO_DATE("24/10/2024:10/00","%d/%m/%Y:%H/%i"));
+
+Insert into ENCADRER (IDMON, NUMCOURS, DATEENC, IDSEANCE) values
+(11, 6, STR_TO_DATE("16/10/2024:14/10","%d/%m/%Y:%H/%i"), 1),
+(11, 6, STR_TO_DATE("23/10/2024:14/10","%d/%m/%Y:%H/%i"), 4),
+(12, 6, STR_TO_DATE("16/10/2024:10/00","%d/%m/%Y:%H/%i"), 2),
+(12, 6, STR_TO_DATE("23/10/2024:10/00","%d/%m/%Y:%H/%i"), 5);
