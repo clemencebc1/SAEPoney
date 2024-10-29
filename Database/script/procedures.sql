@@ -2,7 +2,7 @@
 DROP TRIGGER IF EXISTS addPersonneCours;
 DROP TRIGGER IF EXISTS poids_max_poneys;
 -- Verification qu'il n'y a pas plus de 1. personne dans le cours
-delimiter |
+
 CREATE OR REPLACE TRIGGER addPersonneCours BEFORE INSERT ON PARTICIPER FOR EACH ROW
 BEGIN 
     DECLARE nbPerCours int DEFAULT 0;
@@ -14,12 +14,12 @@ BEGIN
         signal SQLSTATE '45000' set MESSAGE_TEXT = mes;
     END IF ;
 END |
-DELIMITER ;
+
  
 
 
 -- les poneys ne peuvent pas supporter plus d'un certain poids
-delimiter |
+
 create or replace trigger poids_max_poneys before insert on PARTICIPER for each ROW
 BEGIN
     declare poids_poney int;
@@ -32,10 +32,10 @@ BEGIN
         signal SQLSTATE '45000' set MESSAGE_TEXT = mes;
     end if;
 end |
-delimiter ;
+
 
 -- une seance payee ne peut plus passer a false
-delimiter |
+
 create or replace trigger paye before update on PARTICIPER for each Row
 begin 
     declare paye_s boolean;
@@ -47,7 +47,7 @@ begin
 end |
 
 -- un poney doit avoir au minimm 1 de repos entre chaque cours
-delimiter |
+
 create or replace trigger repos before insert on PARTICIPER for each Row
 begin
     declare date_cours DATETIME;
