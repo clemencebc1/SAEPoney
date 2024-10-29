@@ -1,6 +1,6 @@
 -- script drop procedure 
 DROP TRIGGER IF EXISTS addPersonneCours;
-DROP TRIGGER IF EXISTS poids_max_poneys
+DROP TRIGGER IF EXISTS poids_max_poneys;
 -- Verification qu'il n'y a pas plus de 1. personne dans le cours
 delimiter |
 CREATE OR REPLACE TRIGGER addPersonneCours BEFORE INSERT ON PARTICIPER FOR EACH ROW
