@@ -92,3 +92,5 @@ Insert into ENCADRER (IDMON, NUMCOURS, DATEENC, IDSEANCE) values
 (11, 6, STR_TO_DATE("23/10/2024:14/10","%d/%m/%Y:%H/%i"), 4),
 (12, 6, STR_TO_DATE("16/10/2024:10/00","%d/%m/%Y:%H/%i"), 2),
 (12, 6, STR_TO_DATE("23/10/2024:10/00","%d/%m/%Y:%H/%i"), 5);
+
+Insert into PARTICIPER (NUMCOURS, IDADH, DATEPART, IDSEANCE, IDPO, PAYE) values ();
