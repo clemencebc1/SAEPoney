@@ -1,7 +1,7 @@
 -- script drop procedure 
 DROP TRIGGER IF EXISTS addPersonneCours;
 DROP TRIGGER IF EXISTS poids_max_poneys;
--- Verification qu'il n'y a pas plus de 1. personne dans le cours
+-- Verification qu'il n'y a pas plus de 10 personnes dans le cours
 
 CREATE OR REPLACE TRIGGER addPersonneCours BEFORE INSERT ON PARTICIPER FOR EACH ROW
 BEGIN 
@@ -46,16 +46,17 @@ begin
     end if;
 end |
 
--- un poney doit avoir au minimm 1 de repos entre chaque cours
+-- un poney doit avoir au minimm 1 heure de repos entre 2 heures de cours
 
 create or replace trigger repos before insert on PARTICIPER for each Row
 begin
-    declare date_cours DATETIME;
     declare mes varchar(50) default "le poney a besoin de repos";
-    select DATEPART into date_cours from PARTICIPER where IDPO = new.IDPO and DAY(DATEPART) = DAY(new.DATEPART) and MONTH(DATEPART) = MONTH(new.DATEPART) and YEAR(DATEPART) = YEAR(new.DATEPART);
-    if DATEDIFF(new.DATEPART, date_cours)<1 THEN
+    declare duree_c int default 0;
+    select DUREE into duree_c from PARTICIPER natural join SEANCE nautral join PONEY where HOUR(DATEPART) = HOUR(new.DATEPART)-2 and DAY(DATEPART) = DAY(new.DATEPART) and MONTH(DATEPART) = MONTH(new.DATEPART) and YEAR(DATEPART) = YEAR(new.DATEPART) and IDPO = new.IDPO;
+    if duree_c>=2 THEN
         signal SQLSTATE '45000' set MESSAGE_TEXT = mes;
     end if;
 end |
 
-
+-- On veut la duree d'une seance qui serait le meme jour, meme mois, meme annee,
+-- deux heures avant dont la duree est de 2 heures avec le meme poney

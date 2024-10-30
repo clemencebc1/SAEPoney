@@ -33,7 +33,7 @@ CREATE TABLE COURS (
 CREATE TABLE SEANCE (
     IDSEANCE INT,
     PRIX DECIMAL(5,2),
-    DUREE DECIMAL(3,2) CHECK (DUREE BETWEEN 1 AND 2), -- le cours dure entre une et deux heures
+    DUREE INT CHECK (DUREE BETWEEN 1 AND 2), -- le cours dure entre une et deux heures
     NIVEAU INT,
     DESCRIPTIF VARCHAR(50),
     GROUPE_AGE VARCHAR(50),

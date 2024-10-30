@@ -2,7 +2,7 @@
 
 INSERT INTO PERSONNE (IDPER,NOMPER, PRENOMPER, EMAIL, DDNPER, POIDS, ADRESSE, PORTABLE)
 VALUES
-  (1,"Perry","Macon","in@icloud.org",STR_TO_DATE("2010/09/18", "%Y/%m/%d"),20,"Ap #731-3409 Eu Road Orléans","03 36 78 33 08"),
+  (1,"Perry","Macon","in@icloud.org",STR_TO_DATE("2010/09/19", "%Y/%m/%d"),20,"Ap #731-3409 Eu Road Orléans","03 36 78 33 08"),
   (2,"Suarez","Cecilia","vivamus.non@google.edu",STR_TO_DATE("2000/01/14", "%Y/%m/%d"),29,"621 Etiam Av. Orléans","05 05 21 22 81"),
   (3,"Morris","Brielle","semper@yahoo.ca",STR_TO_DATE("2019/06/05", "%Y/%m/%d"),31,"819-3025 Lacus. Rd. Orléans","06 82 05 38 68"),
   (4,"Mccarty","Stuart","adipiscing.lobortis.risus@outlook.couk",STR_TO_DATE("2021/11/23", "%Y/%m/%d"),45,"2671 Tincidunt Avenue Orléans","03 63 57 85 20"),
@@ -70,8 +70,6 @@ Insert into COURS (NUMCOURS,NOMCOURS, TYPEC) values (0,'Dressage', 2),
 (5,'CSO', 2),
 (6,'Groom', 2);
 
-
-
 Insert into PONEY (NOMPO, DDNPO, POIDS_MAX, RACE, SEXE) values 
 ('Didi', STR_TO_DATE("12/12/2018", "%d/%m/%Y"), 46, 'Shetland', 1),
 ('Patrick', STR_TO_DATE("28/02/2017", "%d/%m/%Y"), 51, 'Shetland', 2),
@@ -80,12 +78,12 @@ Insert into PONEY (NOMPO, DDNPO, POIDS_MAX, RACE, SEXE) values
 ('Michelle', STR_TO_DATE("17/07/2016", "%d/%m/%Y"), 46, 'Shetland', 1);
 
 Insert into SEANCE (IDSEANCE, PRIX, DUREE, NIVEAU, DESCRIPTIF, GROUPE_AGE, NUMCOURS, DATE_SEANCE) 
-values (1, 25, 1.1, 1, "baby poney", "moins de 6 ans", 6, STR_TO_DATE("16/10/2024:14/10","%d/%m/%Y:%H/%i")),
-(2, 35, 1.2,1, "baby grand poney", "plus de 6 ans - moins de 10 ans", 6,STR_TO_DATE("16/10/2024:10/00","%d/%m/%Y:%H/%i")),
-(3, 27, 1.5,2, "grand poney", "plus de 8 ans - moins de 12 ans", 6,STR_TO_DATE("17/10/2024:10/00","%d/%m/%Y:%H/%i")),
-(4, 25, 1.1, 1, "baby poney", "moins de 6 ans", 6, STR_TO_DATE("23/10/2024:14/10","%d/%m/%Y:%H/%i")),
-(5, 35, 1.2,1, "baby grand poney", "plus de 6 ans - moins de 10 ans", 6,STR_TO_DATE("23/10/2024:10/00","%d/%m/%Y:%H/%i")),
-(6, 27, 1.5,2, "grand poney", "plus de 8 ans - moins de 12 ans", 6,STR_TO_DATE("24/10/2024:10/00","%d/%m/%Y:%H/%i"));
+values (1, 25, 1, 1, "baby poney", "moins de 6 ans", 6, STR_TO_DATE("16/10/2024:14/10","%d/%m/%Y:%H/%i")),
+(2, 35, 1,1, "baby grand poney", "plus de 6 ans - moins de 10 ans", 6,STR_TO_DATE("16/10/2024:10/00","%d/%m/%Y:%H/%i")),
+(3, 27, 2,2, "grand poney", "plus de 8 ans - moins de 12 ans", 6,STR_TO_DATE("17/10/2024:10/00","%d/%m/%Y:%H/%i")),
+(4, 25, 1, 1, "baby poney", "moins de 6 ans", 6, STR_TO_DATE("23/10/2024:14/10","%d/%m/%Y:%H/%i")),
+(5, 35, 1,1, "baby grand poney", "plus de 6 ans - moins de 10 ans", 6,STR_TO_DATE("23/10/2024:10/00","%d/%m/%Y:%H/%i")),
+(6, 27, 2,2, "grand poney", "plus de 8 ans - moins de 12 ans", 6,STR_TO_DATE("24/10/2024:10/00","%d/%m/%Y:%H/%i"));
 
 Insert into ENCADRER (IDMON, NUMCOURS, DATEENC, IDSEANCE) values
 (11, 6, STR_TO_DATE("16/10/2024:14/10","%d/%m/%Y:%H/%i"), 1),
@@ -93,4 +91,4 @@ Insert into ENCADRER (IDMON, NUMCOURS, DATEENC, IDSEANCE) values
 (12, 6, STR_TO_DATE("16/10/2024:10/00","%d/%m/%Y:%H/%i"), 2),
 (12, 6, STR_TO_DATE("23/10/2024:10/00","%d/%m/%Y:%H/%i"), 5);
 
-Insert into PARTICIPER (NUMCOURS, IDADH, DATEPART, IDSEANCE, IDPO, PAYE) values ();
+Insert into PARTICIPER (NUMCOURS, IDADH, DATEPART, IDSEANCE, IDPO, PAYE) values (6, 1,STR_TO_DATE("16/10/2024:14/10","%d/%m/%Y:%H/%i"),1,true);
