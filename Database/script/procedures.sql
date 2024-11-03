@@ -66,8 +66,10 @@ create or replace trigger cours_particulier before insert on PARTICIPER for each
 begin
     declare mes varchar(50) default "le cours particulier a deja un participant";
     declare participant int default 0;
+    declare type_cours int default 1;
     select count(IDADH) into participant from PARTICIPER where IDSEANCE=new.IDSEANCE;
-    if participant > 0 THEN
+    select TYPEC into type_cours from SEANCE NATURAL JOIN  COURS where IDSEANCE = new.IDSEANCE;
+    if type_cours != 1 and participant > 0 THEN
         signal SQLSTATE '45000' set MESSAGE_TEXT=mes;
     end if;
 end |
