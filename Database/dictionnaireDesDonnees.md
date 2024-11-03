@@ -21,6 +21,7 @@
 
 ## table SEANCE
 > Une séance n'existe pas sans cours
+
 |  Nom | type  |  commentaires | 
 |-------|---------|-----------|
 | __IDSEANCE__ | INT | identifiant unique designant une seance |
@@ -76,6 +77,7 @@
 
 ## table ENCADRER
 > Un moniteur encadre une séance à une certaine date
+
 |  Nom | type  |  commentaires | 
 |-------|---------|-----------|
 | __IDMON__ | INT | identifiant unique d'un moniteur |
@@ -86,6 +88,7 @@
 ## table PARTICIPER
 > un adherent et et un poney participe à une séance à une certaine date
 > Un poney participe avec un seul adherent
+
 |  Nom | type  |  commentaires | 
 |-------|---------|-----------|
 | __NUMCOURS__ | INT | identifiant unique d'un cours |
@@ -97,6 +100,7 @@
 
 ## table ETRE_PRESENT
 > lorsqu'une facture est faite, elle concerne un ou des tarif.s
+
 |  Nom | type  |  commentaires | 
 |-------|---------|-----------|
 | __IDFACTURE__ | INT | identifiant unique d'une facture |
