@@ -59,5 +59,18 @@ begin
 end |
 
 delimiter ;
+
+-- un cours individuel ne peut avoir d'un seul participant
+delimiter |
+create or replace trigger cours_particulier before insert on PARTICIPER for each Row
+begin
+    declare mes varchar(50) default "le cours particulier a deja un participant";
+    declare participant int default 0;
+    select count(IDADH) into participant from PARTICIPER where IDSEANCE=new.IDSEANCE;
+    if participant > 0 THEN
+        signal SQLSTATE '45000' set MESSAGE_TEXT=mes;
+    end if;
+end |
+
 show triggers;
 

@@ -50,6 +50,78 @@ VALUES
   (40,"Cunningham","Guy","integer@outlook.couk",STR_TO_DATE("1988/10/17", "%Y/%m/%d"),63,"694-4152 Nulla Ave Orléans","07 13 67 08 22"),
   (41,"Harris","Graiden","aliquam.ultrices@icloud.edu",STR_TO_DATE("1993/04/17", "%Y/%m/%d"),58,"8259 Sed Rd. Orléans","04 35 48 85 24");
 
+INSERT INTO PERSONNE (IDPER,NOMPER, PRENOMPER, EMAIL, DDNPER, POIDS, ADRESSE, PORTABLE)
+VALUES
+  (42,"Willis","Ulla","wulla1407@outlook.com","04/03/2018",47,"P.O. Box 935, 2921 Et, Av.","02 53 25 52 73"),
+  (43,"Dyer","Alden","alden.dyer@yahoo.com","12/11/2014",36,"606-1707 Nisi St.","04 87 57 02 60"),
+  (44,"Beck","Remedios","r.beck@google.com","01/15/2019",52,"874 Tincidunt Av.","04 76 52 68 18"),
+  (45,"Schroeder","Leslie","lschroeder@yahoo.com","11/14/2016",38,"P.O. Box 917, 1155 Neque St.","09 13 54 86 81"),
+  (46,"Hewitt","Vernon","hewitt.vernon@hotmail.com","06/07/2015",43,"P.O. Box 451, 2397 Non, St.","09 48 55 85 99"),
+  (47,"Fuentes","Colt","colt_fuentes@yahoo.com","11/17/2019",46,"586-4415 Arcu St.","04 18 22 72 11"),
+  (48,"Hahn","Hunter","hahn_hunter@google.com","01/24/2019",48,"Ap #910-1215 Nunc St.","08 61 24 54 63"),
+  (49,"Bond","Hayes","bond-hayes1891@aol.com","02/23/2014",41,"Ap #306-7785 Diam St.","02 81 52 88 46"),
+  (50,"Dunn","Shoshana","dunn_shoshana@outlook.com","09/28/2017",33,"Ap #644-9819 At, St.","08 72 25 57 06"),
+  (51,"Wooten","Calista","w_calista8853@outlook.com","06/21/2017",55,"577-7536 Aliquet Road","04 26 38 86 21");
+INSERT INTO PERSONNE (IDPER,NOMPER, PRENOMPER, EMAIL, DDNPER, POIDS, ADRESSE, PORTABLE)
+VALUES
+  (52,"Wallace","Seth","seth-wallace@outlook.com","02/28/2019",37,"P.O. Box 433, 5350 Eu Ave","06 75 22 75 86"),
+  (53,"Brennan","Wylie","bwylie585@hotmail.com","09/24/2015",36,"P.O. Box 199, 4931 Ullamcorper St.","01 30 75 97 07"),
+  (54,"Foreman","Laura","laura.foreman7269@protonmail.com","09/20/2018",40,"Ap #138-5603 Eget Rd.","07 62 66 70 44"),
+  (55,"Vaughan","Mari","m.vaughan@google.com","12/04/2013",34,"218-3213 Libero. Av.","05 33 58 68 22"),
+  (56,"Barnett","Kieran","kieran-barnett6557@hotmail.com","03/22/2017",50,"3010 Adipiscing Street","03 62 11 73 69"),
+  (57,"Farley","Ferdinand","ferdinandfarley@outlook.com","07/29/2016",41,"854-2972 Et Rd.","04 28 24 54 11"),
+  (58,"Cash","Andrew","andrewcash1216@hotmail.com","06/04/2013",43,"245-7475 Arcu. St.","02 97 06 73 91"),
+  (59,"Byers","Roanna","roannabyers947@google.com","08/18/2019",48,"4109 At Avenue","06 74 78 00 47"),
+  (60,"Baird","John","b.john@yahoo.com","08/20/2020",53,"1837 Non Rd.","03 10 15 97 29"),
+  (61,"Ingram","Upton","i-upton@aol.com","08/07/2014",39,"438-7585 Sociis Rd.","05 75 41 07 45");
+INSERT INTO PERSONNE (IDPER,NOMPER, PRENOMPER, EMAIL, DDNPER, POIDS, ADRESSE, PORTABLE)
+VALUES
+  (62,"Fuller","Ignatius","f-ignatius2049@yahoo.com","11/14/2013",37,"797-3728 Elit, Rd.","08 99 61 95 64"),
+  (63,"Montoya","Theodore","montoyatheodore2012@yahoo.com","08/05/2014",47,"Ap #639-408 Nunc Ave","06 63 08 71 06"),
+  (64,"Knowles","Caldwell","knowles_caldwell@protonmail.com","11/02/2014",43,"417-9650 Id St.","03 15 34 95 71"),
+  (65,"Williamson","Jared","jared_williamson7159@outlook.com","12/14/2017",46,"P.O. Box 906, 9914 Orci, St.","07 31 36 69 13"),
+  (66,"Mccarthy","Dora","m.dora@yahoo.com","10/30/2018",54,"693 Convallis Rd.","06 41 74 64 63"),
+  (67,"Stuart","Kermit","kermitstuart@outlook.com","05/25/2015",56,"321-5736 Lectus, Av.","02 52 37 37 37"),
+  (68,"Espinoza","Allegra","eallegra4790@outlook.com","07/15/2019",50,"601-854 Ultrices. Rd.","01 23 62 36 35"),
+  (69,"Nichols","Shoshana","shoshananichols@protonmail.com","03/02/2019",54,"144-8810 Habitant Ave","06 54 20 12 76"),
+  (70,"Finch","Patience","f-patience6457@hotmail.com","08/22/2020",36,"2818 Tincidunt Avenue","06 92 28 63 22"),
+  (71,"Decker","Orlando","o.decker3486@aol.com","08/15/2016",32,"889-2639 At Rd.","04 56 45 59 71");
+INSERT INTO PERSONNE ((IDPER,NOMPER, PRENOMPER, EMAIL, DDNPER, POIDS, ADRESSE, PORTABLE))
+VALUES
+  (72,"Little","Matthew","matthew.little6997@hotmail.com","05/01/2016",47,"P.O. Box 532, 420 Justo. Road","04 25 45 97 34"),
+  (73,"Stout","Blythe","b_stout@hotmail.com","03/04/2015",48,"P.O. Box 566, 3181 Elit, Street","06 23 10 79 30"),
+  (74,"Salas","Ulric","s-ulric1802@hotmail.com","02/09/2017",35,"P.O. Box 312, 4673 Praesent St.","06 51 76 43 91"),
+  (75,"Bright","Rebecca","rebecca.bright@hotmail.com","11/20/2014",53,"Ap #803-7936 A Rd.","07 37 10 56 53"),
+  (76,"Larson","Zachery","z-larson@outlook.com","02/04/2015",42,"Ap #156-3444 Vivamus Ave","03 29 97 72 49"),
+  (77,"Aguilar","Ramona","a-ramona1677@outlook.com","02/23/2019",45,"Ap #512-3609 Ipsum. Ave","05 47 85 53 58"),
+  (78,"Whitehead","Jolie","j.whitehead3594@outlook.com","11/08/2017",38,"Ap #837-487 Praesent St.","01 28 67 27 13"),
+  (79,"Golden","Drake","g_drake@outlook.com","05/01/2017",33,"539-7104 Ornare Rd.","07 56 18 84 31"),
+  (80,"Turner","Gannon","gannon_turner2328@icloud.com","09/15/2015",51,"Ap #613-7565 Sed Road","01 86 38 66 66"),
+  (81,"Macdonald","Winter","wintermacdonald@google.com","11/15/2020",30,"351-4385 Vitae Ave","09 34 86 35 32");
+INSERT INTO PERSONNE (IDPER,NOMPER, PRENOMPER, EMAIL, DDNPER, POIDS, ADRESSE, PORTABLE)
+VALUES
+  (82,"Webb","Debra","w-debra6405@yahoo.com","03/01/2015",33,"849-1071 Non Street","01 72 35 14 38"),
+  (83,"Gray","Daryl","g.daryl9578@hotmail.com","04/03/2013",34,"Ap #370-4398 Eget, Avenue","08 03 00 57 85"),
+  (84,"Valenzuela","Murphy","murphy.valenzuela9649@icloud.com","11/02/2018",52,"Ap #912-7943 Et Rd.","03 52 32 27 82"),
+  (85,"Ross","Raymond","r_raymond2513@outlook.com","05/09/2014",46,"P.O. Box 241, 7188 Turpis. Av.","01 71 60 44 22"),
+  (86,"Buck","Hermione","buck_hermione7826@aol.com","11/16/2019",48,"Ap #318-5676 Sed Street","08 38 22 28 70"),
+  (87,"Garner","Yolanda","g.yolanda@yahoo.com","11/26/2018",56,"161-2828 Etiam Road","07 27 35 62 05"),
+  (88,"Kirby","Eagan","e-kirby2002@yahoo.com","04/29/2019",49,"352-3888 Sem. St.","04 09 75 01 70"),
+  (89,"Castillo","Hakeem","h.castillo@hotmail.com","02/24/2020",52,"Ap #795-9121 Adipiscing, Rd.","02 02 96 36 84"),
+  (90,"Riley","Charity","charity_riley@google.com","01/09/2015",45,"Ap #962-7893 Porttitor Avenue","07 58 72 25 98"),
+  (91,"Shaffer","Hillary","hillaryshaffer9126@hotmail.com","04/01/2020",44,"P.O. Box 319, 7321 Vel Street","07 37 57 80 68");
+INSERT INTO PERSONNE (IDPER,NOMPER, PRENOMPER, EMAIL, DDNPER, POIDS, ADRESSE, PORTABLE)
+VALUES
+  (92,"Lucas","Kirsten","lkirsten@outlook.com","04/09/2020",36,"Ap #437-252 Id Street","02 81 18 30 57"),
+  (93,"Rodriguez","Sydney","rodriguez-sydney@hotmail.com","12/22/2018",40,"Ap #393-3727 Curabitur St.","06 56 59 33 25"),
+  (94,"Coleman","Irma","c-irma7701@hotmail.com","03/05/2018",43,"Ap #474-6238 Iaculis Rd.","01 76 34 71 27"),
+  (95,"Phillips","Avye","aphillips@outlook.com","12/14/2014",54,"131-9623 Elementum St.","04 37 71 12 32"),
+  (96,"Carver","Brynn","brynncarver8779@protonmail.com","02/26/2017",48,"Ap #187-7094 Aliquet Av.","08 53 70 82 16"),
+  (97,"Strong","Cynthia","s-cynthia@aol.com","10/26/2015",48,"Ap #451-5098 Integer St.","03 53 56 11 88"),
+  (98,"Santiago","Zeph","santiago_zeph@yahoo.com","09/29/2016",52,"P.O. Box 741, 2611 Ante Road","05 83 65 31 40"),
+  (99,"Mcmahon","Sydney","msydney@protonmail.com","08/27/2016",53,"Ap #396-8772 Lacinia Av.","01 01 74 14 58"),
+  (100,"Castillo","Noel","noelcastillo@yahoo.com","08/29/2019",48,"665-4512 A, Av.","08 97 66 16 82"),
+  (101,"Pearson","Jordan","jordan_pearson9178@google.com","07/23/2014",33,"P.O. Box 568, 8055 Pellentesque St.","05 67 02 11 31");
 
 
 INSERT INTO ADHERENT values (1,STR_TO_DATE("14/05/2025", "%d/%m/%Y"),2);
@@ -104,7 +176,30 @@ Insert into PONEY (NOMPO, DDNPO, POIDS_MAX, RACE, SEXE) values
 ('Michelle', STR_TO_DATE("17/07/2016", "%d/%m/%Y"), 46, 'Shetland', 1),
 ('Sisi', STR_TO_DATE("17/07/2016", "%d/%m/%Y"), 48, 'Shetland', 1),
 ('Trixy', STR_TO_DATE("06/08/2016", "%d/%m/%Y"), 45, 'Shetland', 1),
-('Hulk', STR_TO_DATE("01/04/2017", "%d/%m/%Y"), 49, 'Shetland', 2);
+('Hulk', STR_TO_DATE("01/04/2017", "%d/%m/%Y"), 49, 'Shetland', 2),
+('Optimus', STR_TO_DATE("01/01/2015", "%d/%m/%Y"), 54, 'Connemara',2),
+('Pesky', STR_TO_DATE("24/09/2016", "%d/%m/%Y"), 49, 'Connemara', 2),
+('Ozzy', STR_TO_DATE("29/11/2015", "%d/%m/%Y"), 56, 'Connemara', 2),
+('Paquito', STR_TO_DATE("07/08/2017", "%d/%m/%Y"), 47, 'Dartmoor', 2),
+('Phoebe', STR_TO_DATE("20/03/2018", "%d/%m/%Y"), 45, 'Dartmoor', 1),
+('Pressley', STR_TO_DATE("27/12/2016", "%d/%m/%Y"), 52, 'Dartmoor',2)
+('Pumpkinie', STR_TO_DATE("18/10/2018", "%d/%m/%Y"), 43, 'Haflinger', 1),
+
+('Bejia', STR_TO_DATE("25/08/2018", "%d/%m/%Y"), 47, 'Falabella', 1),
+('Amigo', STR_TO_DATE("28/02/2017", "%d/%m/%Y"), 52, 'Shetland', 2),
+('Bentley', STR_TO_DATE("03/04/2015", "%d/%m/%Y"), 55, 'Fjord', 2),
+('Biggie', STR_TO_DATE("14/07/2016", "%d/%m/%Y"), 48, 'Fjord', 1),
+('Chacox', STR_TO_DATE("17/05/2016", "%d/%m/%Y"), 48, 'Shetland', 1),
+('Camila', STR_TO_DATE("03/02/2017", "%d/%m/%Y"), 51, 'Haflinger', 1),
+('Daisy', STR_TO_DATE("06/08/2016", "%d/%m/%Y"), 52, 'Shetland', 1),
+('Diesel', STR_TO_DATE("22/01/2017", "%d/%m/%Y"), 49, 'Shetland', 2),
+('Egi', STR_TO_DATE("11/09/2015", "%d/%m/%Y"), 53, 'Connemara',2),
+('El Mino', STR_TO_DATE("24/09/2018", "%d/%m/%Y"), 44, 'Connemara', 2),
+('Fifi', STR_TO_DATE("28/08/2016", "%d/%m/%Y"), 56, 'Connemara', 2),
+('Felix', STR_TO_DATE("08/08/2018", "%d/%m/%Y"), 47, 'Dartmoor', 2),
+('Flossie', STR_TO_DATE("27/02/2018", "%d/%m/%Y"), 46, 'Dartmoor', 1),
+('Riki', STR_TO_DATE("27/12/2016", "%d/%m/%Y"), 53, 'Dartmoor',2)
+('Shakira', STR_TO_DATE("18/04/2018", "%d/%m/%Y"), 45, 'Haflinger', 1);
 
 Insert into SEANCE (IDSEANCE, PRIX, DUREE, NIVEAU, DESCRIPTIF, GROUPE_AGE, NUMCOURS, DATE_SEANCE) 
 values (1, 25, 1, 1, "baby poney", "moins de 6 ans", 6, STR_TO_DATE("16/10/2024:14/10","%d/%m/%Y:%H/%i")),
