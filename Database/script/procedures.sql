@@ -1,8 +1,10 @@
 -- script drop procedure 
 DROP TRIGGER IF EXISTS addPersonneCours;
 DROP TRIGGER IF EXISTS poids_max_poneys;
--- Verification qu'il n'y a pas plus de 10 personnes dans le cours
-
+DROP TRIGGER IF EXISTS paye;
+DROP TRIGGER IF EXISTS repos;
+-- Verification qu'il n'y a pas plus de 1. personne dans le cours
+delimiter |
 CREATE OR REPLACE TRIGGER addPersonneCours BEFORE INSERT ON PARTICIPER FOR EACH ROW
 BEGIN 
     DECLARE nbPerCours int DEFAULT 0;
@@ -14,12 +16,10 @@ BEGIN
         signal SQLSTATE '45000' set MESSAGE_TEXT = mes;
     END IF ;
 END |
-
- 
-
+DELIMITER ;
 
 -- les poneys ne peuvent pas supporter plus d'un certain poids
-
+delimiter |
 create or replace trigger poids_max_poneys before insert on PARTICIPER for each ROW
 BEGIN
     declare poids_poney int;
@@ -32,10 +32,10 @@ BEGIN
         signal SQLSTATE '45000' set MESSAGE_TEXT = mes;
     end if;
 end |
-
+delimiter ;
 
 -- une seance payee ne peut plus passer a false
-
+delimiter |
 create or replace trigger paye before update on PARTICIPER for each Row
 begin 
     declare paye_s boolean;
@@ -46,17 +46,18 @@ begin
     end if;
 end |
 
--- un poney doit avoir au minimm 1 heure de repos entre 2 heures de cours
-
+-- un poney doit avoir au minimm 1 de repos entre chaque cours
+delimiter |
 create or replace trigger repos before insert on PARTICIPER for each Row
 begin
-    declare mes varchar(50) default "le poney a besoin de repos";
     declare duree_c int default 0;
-    select DUREE into duree_c from PARTICIPER natural join SEANCE natural join PONEY where HOUR(DATEPART) = HOUR(new.DATEPART)-2 and DAY(DATEPART) = DAY(new.DATEPART) and MONTH(DATEPART) = MONTH(new.DATEPART) and YEAR(DATEPART) = YEAR(new.DATEPART) and IDPO = new.IDPO;
+    declare mes varchar(50) default "le poney a besoin de repos";
+    select DUREE into duree_c from PARTICIPER natural join SEANCE natural join PONEY where IDPO = new.IDPO and HOUR(DATEPART)=HOUR(new.DATEPART)-2 and DAY(DATEPART) = DAY(new.DATEPART) and MONTH(DATEPART) = MONTH(new.DATEPART) and YEAR(DATEPART) = YEAR(new.DATEPART);
     if duree_c>=2 THEN
         signal SQLSTATE '45000' set MESSAGE_TEXT = mes;
     end if;
 end |
 
--- On veut la duree d'une seance qui serait le meme jour, meme mois, meme annee,
--- deux heures avant dont la duree est de 2 heures avec le meme poney
+delimiter ;
+show triggers;
+
