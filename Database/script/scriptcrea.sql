@@ -85,7 +85,7 @@ CREATE TABLE TARIFS (
 
 -- associations
 
--- un moniteur encadre un cours a une date precise
+-- un moniteur encadre une seance a une certaine date
 CREATE TABLE ENCADRER(
     IDMON INT,
     NUMCOURS INT,
@@ -94,18 +94,18 @@ CREATE TABLE ENCADRER(
     PRIMARY KEY (IDMON, NUMCOURS, DATEENC, IDSEANCE)
 );
 
--- un adherent participe a un cours a une date precise
+-- un adherent et un poney participe a une seance a une certaine date
 CREATE TABLE PARTICIPER(
     NUMCOURS INT, 
     IDPO int,
     IDADH INT,
     DATEPART DATETIME,
-    PAYE BOOLEAN NOT NULL,
+    PAYE BOOLEAN NOT NULL, -- une fois paye, la seance ne peut pas etre remboursee
     IDSEANCE INT,
     PRIMARY KEY (NUMCOURS, IDADH, DATEPART, IDSEANCE, IDPO)
 );
 
--- association entre tarifs et facture
+-- pour chaque facture, un/des tarif.s sont associes
 CREATE TABLE ETRE_PRESENT(
     IDFACTURE INT,
     IDTARIF INT,
