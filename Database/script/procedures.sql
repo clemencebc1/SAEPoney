@@ -52,7 +52,7 @@ create or replace trigger repos before insert on PARTICIPER for each Row
 begin
     declare mes varchar(50) default "le poney a besoin de repos";
     declare duree_c int default 0;
-    select DUREE into duree_c from PARTICIPER natural join SEANCE nautral join PONEY where HOUR(DATEPART) = HOUR(new.DATEPART)-2 and DAY(DATEPART) = DAY(new.DATEPART) and MONTH(DATEPART) = MONTH(new.DATEPART) and YEAR(DATEPART) = YEAR(new.DATEPART) and IDPO = new.IDPO;
+    select DUREE into duree_c from PARTICIPER natural join SEANCE natural join PONEY where HOUR(DATEPART) = HOUR(new.DATEPART)-2 and DAY(DATEPART) = DAY(new.DATEPART) and MONTH(DATEPART) = MONTH(new.DATEPART) and YEAR(DATEPART) = YEAR(new.DATEPART) and IDPO = new.IDPO;
     if duree_c>=2 THEN
         signal SQLSTATE '45000' set MESSAGE_TEXT = mes;
     end if;
