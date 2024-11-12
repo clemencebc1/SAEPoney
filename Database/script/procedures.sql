@@ -3,13 +3,13 @@ DROP TRIGGER IF EXISTS addPersonneCours;
 DROP TRIGGER IF EXISTS poids_max_poneys;
 DROP TRIGGER IF EXISTS paye;
 DROP TRIGGER IF EXISTS repos;
--- Verification qu'il n'y a pas plus de 1. personne dans le cours
+-- Verification qu'il n'y a pas plus de 10 personne dans le cours
 delimiter |
 CREATE OR REPLACE TRIGGER addPersonneCours BEFORE INSERT ON PARTICIPER FOR EACH ROW
 BEGIN 
     DECLARE nbPerCours int DEFAULT 0;
     DECLARE mes VARCHAR(100);
-    SELECT COUNT(IDADH) INTO nbPerCours FROM PARTICIPER WHERE NUMCOURS = new.NUMCOURS AND DATEPART = new.DATEPART;
+    SELECT COUNT(IDADH) INTO nbPerCours FROM PARTICIPER WHERE IDSEANCE= new.IDSEANCE;
     IF nbPerCours > 9 THEN
         set mes = CONCAT("Impossible d'ajouter ", new.IDADH, ' dans le cours n° ', 
             new.NUMCOURS, "puisque le le nombre maximum d'adherent a été ateint");
@@ -22,14 +22,14 @@ DELIMITER ;
 delimiter |
 create or replace trigger poids_max_poneys before insert on PARTICIPER for each ROW
 BEGIN
-    declare poids_poney int;
-    declare mes varchar(100);
-    declare poids_adherent int;
+    declare poids_poney int default 0;
+    declare mess varchar(100);
+    declare poids_adherent int default 0;
     select POIDS_MAX into poids_poney from PONEY where IDPO = new.IDPO;
-    select POIDS into poids_adherent from PERSONNE natural join ADHERENT where IDADH = new.IDADH;
-    if poids_poney < poids_adherent THEN
-        set mes = concat(mes, 'Le poney ne peut pas porter plus de ', poids_poney, ' kg');
-        signal SQLSTATE '45000' set MESSAGE_TEXT = mes;
+    select POIDS into poids_adherent from PERSONNE inner join ADHERENT ON PERSONNE.IDPER = ADHERENT.IDADH where IDPER = new.IDADH;
+    if poids_poney <= poids_adherent THEN
+        set mess = concat(mess, 'Le poney ne peut pas porter plus de ', poids_poney, ' kg');
+        signal SQLSTATE '45000' set MESSAGE_TEXT = mess;
     end if;
 end |
 delimiter ;
@@ -73,6 +73,7 @@ begin
         signal SQLSTATE '45000' set MESSAGE_TEXT=mes;
     end if;
 end |
+delimiter ;
 
 show triggers;
 
