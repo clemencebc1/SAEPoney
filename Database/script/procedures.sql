@@ -8,7 +8,7 @@ delimiter |
 CREATE OR REPLACE TRIGGER addPersonneCours BEFORE INSERT ON PARTICIPER FOR EACH ROW
 BEGIN 
     DECLARE nbPerCours int DEFAULT 0;
-    DECLARE mes VARCHAR(100);
+    DECLARE mes VARCHAR(100) default "";
     SELECT COUNT(IDADH) INTO nbPerCours FROM PARTICIPER WHERE IDSEANCE= new.IDSEANCE;
     IF nbPerCours > 9 THEN
         set mes = CONCAT("Impossible d'ajouter ", new.IDADH, ' dans le cours n° ', 
@@ -23,7 +23,7 @@ delimiter |
 create or replace trigger poids_max_poneys before insert on PARTICIPER for each ROW
 BEGIN
     declare poids_poney int default 0;
-    declare mess varchar(100);
+    declare mess varchar(100) default "";
     declare poids_adherent int default 0;
     select POIDS_MAX into poids_poney from PONEY where IDPO = new.IDPO;
     select POIDS into poids_adherent from PERSONNE inner join ADHERENT ON PERSONNE.IDPER = ADHERENT.IDADH where IDPER = new.IDADH;
@@ -75,5 +75,4 @@ begin
 end |
 delimiter ;
 
-show triggers;
 

@@ -11,7 +11,7 @@ VALUES
   (7,"Cruz","Eaton","laoreet@outlook.net",STR_TO_DATE("2011/09/09", "%Y/%m/%d"),38,"5649 Vitae Rd. Orléans","06 20 43 68 42"),
   (8,"Franklin","Nicole","congue@google.couk",STR_TO_DATE("2012/05/20", "%Y/%m/%d"),33,"P.O. Box 495, 4960 Curabitur St. Orléans","03 08 68 41 41"),
   (9,"Barrett","Clinton","interdum@icloud.edu",STR_TO_DATE("2021/03/08", "%Y/%m/%d"),45,"Ap #651-718 Sed St. Orléans","04 93 55 61 23"),
-  (10,"Houston","Basia","penatibus@aol.edu",STR_TO_DATE("2013/08/03", "%Y/%m/%d"),46,"888-3365 Neque. St. Orléans","09 31 64 22 54"),
+  (10,"Houston","Basia","penatibus@aol.edu",STR_TO_DATE("2013/08/03", "%Y/%m/%d"),45,"888-3365 Neque. St. Orléans","09 31 64 22 54"),
 
   (11,"Woodsen","Caroline","carowood@gmail.com",STR_TO_DATE("1999/03/17", "%Y/%m/%d"),62,"3 rue du pendu Orléans","06 32 71 33 08"),
   (12,"Warldoff","Elena","elanwarl@gmail.com",STR_TO_DATE("1992/10/01", "%Y/%m/%d"),59,"45 rue perdu Orléans","07 57 71 94 22"),

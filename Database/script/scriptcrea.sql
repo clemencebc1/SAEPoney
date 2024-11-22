@@ -1,5 +1,6 @@
 -- create new schema
 create database if not exists SAE_PONEY;
+use SAE_PONEY;
 
 -- Script de création de la base de données SAE Poney
 DROP TABLE IF EXISTS ENCADRER;
