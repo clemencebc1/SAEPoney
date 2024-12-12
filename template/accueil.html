@@ -1,33 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title> Grand Galop </title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="accueil.css">
-    </head>
-    <header>
-        <div class="logo-club">
-            <a href="accueil.html"><img src="/img/logo_poney.jpg" alt="logo_club"></a>
-        </div>
-        <div class="link-pages">
-            <ul>
-                <li>
-                    <a href="#" id="tarifs"> Nos tarifs </a>
-                    <a href="#" id="tarifs"> Notre planning </a>
-                    <a href="#" id="tarifs"> Nos poneys </a>
-                    <a href="#" id="tarifs"> Actualités </a>
-                    <a href="#" id="tarifs"> Témoignages </a>
-                    <a href="#" id="tarifs"> Contact </a>
-                </li>
-            </ul>
-        </div>
-        <div class="buttons-register-co">
-
-        </div>
-    </header>
-    <body>
-        ...
-    </body>
+{% extends "index.html" %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='accueil.css') }}">
+{% endblock %}
+{% block content %}
 
 
-</html>
+
+{% endblock %}
