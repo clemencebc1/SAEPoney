@@ -23,15 +23,16 @@
                 </form>
             <?php
             if (isset($_GET['error'])) {
+                $error_style = "<style>.error {color: red;}</style>";
                 switch ($_GET['error']) {
                     case 1:
-                        echo '<p>Invalid email or password</p>';
+                        echo $error_style . '<p class="error">Invalid email or password</p>';
                         break;
                     case 2:
-                        echo '<style>.error {color: red;}</style><p class="error">Login logic unimplemented</p>';
+                        echo $error_style . '<p class="error">Login logic unimplemented</p>';
                         break;
                     default:
-                        echo 'Unknown error';
+                        echo $error_style . '<p class="error">Unknown error </p>';
                         break;
                 }
             }
