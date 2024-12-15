@@ -5,7 +5,7 @@ class DBConnector {
     public function __construct($nombase, $dbuser, $dbpass){
         $this->pdo= new PDO('mysql:host=servinfo-maria;dbname='.$nombase.'', $dbuser, $dbpass);
     }
-    public function get_user(string $mail, string $password){
+    public function get_user(string $mail, string $password):array{
         $sql = "SELECT * FROM USER WHERE MAIL = ? AND PASSWORD = SHA1(?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$mail, $password]);
@@ -16,6 +16,103 @@ class DBConnector {
         return true;
 
     }
+    public function get_poneys(): array{
+        $sql = "SELECT * FROM PONEY;";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        $allinfo = array();
+        foreach($rows as $array){
+            $info = array($array["IDPO"], $array["NOMPO"], $array["DDNPO"], $array["POIDS_MAX"], $array["RACE"], $array["SEXE"]);
+            array_push($allinfo, $info);
+        }
+        return $info;
+    }
+    public function get_cours(): array{
+        $sql = "SELECT * FROM COURS;";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        $allinfo = array();
+        foreach($rows as $array){
+            $info = array($array["NUMCOURS"], $array["NOMCOURS"], $array["TYPEC"]);
+            array_push($allinfo, $info);
+        }
+        return $info;
+    }
+    public function get_seances():array{
+        $sql = "SELECT * FROM SEANCE;";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        $allinfo = array();
+        foreach($rows as $array){
+            $info = array($array["IDSEANCE"], $array["NUMCOURS"], $array["PRIX"], $array["DUREE"], $array["NIVEAU"], $array["DESCRIPTIF"], $array["GROUPE_AGE"], $array["DATE_SEANCE"]);
+            array_push($allinfo, $info);
+        }
+        return $info;
+    }
+    public function get_personnes():array{
+        $sql = "SELECT * FROM PERSONNE;";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        $allinfo = array();
+        foreach($rows as $array){
+            $info = array($array["IDPER"], $array["NOMPER"], $array["PRENOMPER"], $array["EMAIL"], $array["DDNPER"], $array["POIDS"], $array["ADRESSE"], $array["PORTABLE"]);
+            array_push($allinfo, $info);
+        }
+        return $info;
+    }
+    public function get_moniteurs():array{
+        $sql = "SELECT * FROM MONITEUR;";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        $allinfo = array();
+        foreach($rows as $array){
+            $info = array($array["IDMON"], $array["TYPECONTRAT"], $array["DATEEMBAUCHE"]);
+            array_push($allinfo, $info);
+        }
+        return $info;
+    }
+    public function get_adherents():array{
+        $sql = "SELECT * FROM ADHERENT;";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        $allinfo = array();
+        foreach($rows as $array){
+            $info = array($array["IDADH"], $array["FINCOTISATION"], $array["NIVEAUGALOT"]);
+            array_push($allinfo, $info);
+        }
+        return $info;
+    }
+    public function get_factures():array{
+        $sql = "SELECT * FROM FACTURE;";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        $allinfo = array();
+        foreach($rows as $array){
+            $info = array($array["IDFACTURE"], $array["TOTALTTC"], $array["DATEEDITION"], $array["IDADH"]);
+            array_push($allinfo, $info);
+        }
+        return $info;
+    }
+    public function get_tarifs():array{
+        $sql = "SELECT * FROM TARIFS;";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        $allinfo = array();
+        foreach($rows as $array){
+            $info = array($array["IDTARIF"], $array["ANNEE"], $array["PRIX"]);
+            array_push($allinfo, $info);
+        }
+        return $info;
+    }
+    public function get_encadrer_moniteur(int $idmon): array {
+        $sql = "SELECT IDSEANCE FROM ENCADRER WHERE IDMON = ?";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$idmon]);
+        $user = $stmt->fetchAll();
+
+    }
+
+
 }
 
 $db = new DBConnector("DBbocquet", 'bocquet', 'bocquet');
