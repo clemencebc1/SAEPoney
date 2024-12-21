@@ -48,6 +48,13 @@ nav a {
 .boutons-log .register:hover {
     background-color: #333;
 }
+.box-img img {
+    width: 85%;
+    height:75%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
 
 .poney {
     width: 100%;
@@ -75,4 +82,5 @@ nav a {
 footer {
     text-align: center;
     border: thick solid lightgray;
+    margin-top: auto;
 }
