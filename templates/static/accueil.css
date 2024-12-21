@@ -1,49 +1,4 @@
-body {
-    font-family: Arial, sans-serif; /* police d'écriture à modifier */
-    line-height: 1.6;
-}
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
-}
-
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-nav {
-    display: flex;
-    gap: 40px;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-}
-
-.boutons-log button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    background-color: white;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.boutons-log button:hover {
-    background-color: #f0f0f0;
-}
-
-.boutons-log .register {
-    background-color: black;
-    color: white;
-}
 
 .boutons-log .register:hover {
     background-color: #333;
@@ -77,10 +32,4 @@ nav a {
 .deuxieme-ligne {
     grid-column: span 2;
     text-align: center;
-}
-
-footer {
-    text-align: center;
-    border: thick solid lightgray;
-    margin-top: auto;
 }
