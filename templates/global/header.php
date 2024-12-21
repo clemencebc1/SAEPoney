@@ -25,10 +25,14 @@ nav {
 nav a {
     text-decoration: none;
     color: black;
-    font-size: 16px;
+    font-size: 20px;
+}
+.boutons-log {
+    display: flex;
 }
 
 .boutons-log button {
+    flex-wrap: wrap;
     margin-left: 10px;
     padding: 5px 10px;
     border: 1px solid #ccc;
@@ -41,9 +45,19 @@ nav a {
     background-color: #f0f0f0;
 }
 
-.boutons-log .register {
+.boutons-log .register, .register a {
     background-color: black;
     color: white;
+}
+.sign-in {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+a {
+    color:black;
+    text-decoration: none;
 }
 </style>
 <header>
@@ -58,6 +72,6 @@ nav a {
         </nav>
         <div class="boutons-log">
             <button class="sign-in"><a href="connexion.php">Sign in</a></button>
-            <button class="register"><a href="#">Register</button>
+            <button class="register"><a href="#">Register</a></button>
         </div>
 </header>
