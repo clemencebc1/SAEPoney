@@ -41,8 +41,11 @@ nav a {
     border-radius: 3px;
 }
 
-.boutons-log button:hover {
+.sign-in:hover {
     background-color: #f0f0f0;
+}
+.register:hover {
+    background-color:#2e2d2d;
 }
 
 .boutons-log .register, .register a {
@@ -50,9 +53,6 @@ nav a {
     color: white;
 }
 .sign-in {
-    color: black;
-}
-a:visited {
     color: black;
 }
 a {
@@ -72,6 +72,6 @@ a {
         </nav>
         <div class="boutons-log">
             <button class="sign-in"><a href="connexion.php">Sign in</a></button>
-            <button class="register"><a href="#">Register</a></button>
+            <button class="register"><a href="inscription.php">Register</a></button>
         </div>
 </header>

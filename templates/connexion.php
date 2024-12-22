@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-    <link rel="stylesheet" href="static/connexion.css">
-</head>
+<?php include 'global/head.php'; 
+title_html('Connexion');
+link_to_css('static/connexion.css'); ?>
 <body>
     <?php include('global/header.php') ?>
     <main>
@@ -21,7 +18,7 @@
                     
                     <button type="submit" id="login-btn">Se connecter</button>
                 </form>
-                <p class="inscrire">Pas de compte ? <a href="#">Inscrivez-vous !</a></p>
+                <p class="inscrire">Pas de compte ? <a href="inscription.php">Inscrivez-vous !</a></p>
             </div>
             <div id="image-section">
                 <img src="img/poney-3.jpg" alt="poney">

@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poney Club</title>
-    <link rel="stylesheet" href="static/accueil.css">
-</head>
+<?php include 'global/head.php'; 
+title_html('Poney Club');
+link_to_css('static/accueil.css'); ?>
 <body>
     <?php include('global/header.php');  ?>
     <main>

@@ -6,5 +6,5 @@
 }
 </style>
 <footer>
-    <p>Clémence Bocquet - Ophélie Valin - Nathan Randriantsoa</p>
+    <p>Clémence Bocquet - Ophélie Valin - Nathan Randriantsoa - BUT2 Informatique IUT Orléans</p>
 </footer>
