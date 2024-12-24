@@ -1,5 +1,6 @@
 <?php
 declare(strict_types=1);
+namespace Database\script;
 class DBConnector {
     private $pdo;
     public function __construct($nombase, $dbuser, $dbpass){
