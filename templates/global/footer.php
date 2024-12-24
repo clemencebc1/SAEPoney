@@ -1,5 +1,80 @@
 <style>
+footer {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
 
+.media {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#espace-logo {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+}
+
+#espace-logo .logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 2%;
+}
+
+#espace-logo>#social-icons {
+    display: flex;
+}
+
+#espace-logo>#social-icons a img {
+    width: 24px;
+    height: 24px;
+}
+
+#espace-logo>#social-icons a img:hover {
+    transform: scale(1.1);
+} /* agrandi le logo lorsque hover */
+
+.liste {
+    display: flex;
+    flex: 3;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.colonne {
+    flex: 1;
+    padding-left: 10%;
+}
+
+.colonne>h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.colonne>ul {
+    list-style: none;
+}
+
+.colonne>ul>li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.colonne>ul>li a:hover {
+    color: #007bff;
+}
+
+#mention {
+    text-align: center;
+    border-top: 1px solid #ddd;
+    padding-top: 1%;
+    color: #666;
+    font-size: 12px;
+}
 </style>
 <footer>
     <div class="media">
