@@ -7,8 +7,8 @@ link_to_css('static/inscription.css');?>
     <?php include('global/header.php'); ?>
     <main>
         <section class="form-section">
-            <div class="image-placeholder">
-                <img src="placeholder-image.png" alt="Image placeholder">
+            <div>
+                <img id="img-poney" src="img/poney-4.jpg" alt="image poney">
             </div>
             <div class="form-container">
                 <h1>Inscription</h1>
