@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
-namespace Database\script;
+namespace SAEPONEY\Database;
+use \PDO;
 class DBConnector {
     private $pdo;
     public function __construct($nombase, $dbuser, $dbpass){
@@ -57,7 +58,21 @@ class DBConnector {
             array_push($allinfo, $info);
         }
         return $info;
-    }    
+    }
+    
+    public function get_seance_for_user(string $user){
+        $sql = "SELECT DESCRIPTIF, DATE_SEANCE FROM SEANCE NATURAL JOIN PARTICIPER NATURAL JOIN ADHERENT NATURAL JOIN PERSONNE WHERE EMAIL=' " . $user . "' AND DATE_SEANCE>CURRENT_DATE()";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        $allinfo = array();
+        foreach($rows as $array){
+            $info = array($array["DESCRIPTIF"], $array["DATE_SEANCE"]);
+            array_push($allinfo, $info);
+        }
+        return $info;
+    }
+
+
     /**
      * get_seances, get l'ensemble des seances dans la base de donnees
      *
@@ -155,7 +170,7 @@ class DBConnector {
         }
         return $info;
     }
-    public function get_encadrer_moniteur(int $idmon): array {
+    public function get_encadrer_moniteur(int $idmon): void {
         $sql = "SELECT IDSEANCE FROM ENCADRER WHERE IDMON = ?";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$idmon]);
