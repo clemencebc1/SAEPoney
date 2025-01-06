@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace SAEPONEY\Database;
+namespace Database;
 use \PDO;
 class DBConnector {
     private $pdo;
@@ -61,12 +61,12 @@ class DBConnector {
     }
     
     public function get_seance_for_user(string $user){
-        $sql = "SELECT DESCRIPTIF, DATE_SEANCE FROM SEANCE NATURAL JOIN PARTICIPER NATURAL JOIN ADHERENT NATURAL JOIN PERSONNE WHERE EMAIL=' " . $user . "' AND DATE_SEANCE>CURRENT_DATE()";
+        $sql = "SELECT DISTINCT DESCRIPTIF, DATE_SEANCE FROM SEANCE NATURAL JOIN PARTICIPER NATURAL JOIN ADHERENT NATURAL JOIN PERSONNE WHERE EMAIL='in@icloud.org' AND IDADH=IDPER;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
         $allinfo = array();
         foreach($rows as $array){
-            $info = array($array["DESCRIPTIF"], $array["DATE_SEANCE"]);
+            $info = array($array["DATE_SEANCE"], $array["DESCRIPTIF"]);
             array_push($allinfo, $info);
         }
         return $info;
@@ -180,11 +180,4 @@ class DBConnector {
 
 
 }
-
-$db = new DBConnector("DBbocquet", 'bocquet', 'bocquet');
-$result = $db->get_user("in@icloud.org","LOL123");
-var_dump($result);
-
-
- 
 ?>

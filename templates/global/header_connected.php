@@ -61,7 +61,7 @@
             <nav>
                 <a href="#">Votre planning</a>
                 <a href="#">Votre niveau</a>
-                <a href="#">Vos facture</a>
+                <a href="#">Vos factures</a>
                
             </nav>
             <div class="bouton-compte">

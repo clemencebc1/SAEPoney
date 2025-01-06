@@ -15,8 +15,8 @@
                     <?php $cours_user = $connexion->get_seance_for_user('in@icloud.org'); 
                         $compteur = 0;
                     ?>
-                     Votre prochain cours a lieu le <strong><?php echo $cours_user[0][$compteur] ?></strong></p>
-                <p class="cours-details"><?php echo $cours_user[1][$compteur] ?></p>
+                     Votre prochain cours a lieu le <strong><?php echo $cours_user[$compteur] ?></strong></p>
+                <p class="cours-details"><?php echo $cours_user[1] ?></p>
                 <button class="btn-voir-cours">Voir tous mes cours</button>
             </div>
             <button class="right">&gt;</button>

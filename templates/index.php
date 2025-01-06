@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php require_once '../autoloader.php'; 
+<?php
 include 'global/head.php'; 
 title_html('Poney Club');
 link_to_css('static/accueil.css'); ?>

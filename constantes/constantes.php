@@ -1,4 +1,5 @@
 <?php
-use SAEPONEY\Database\DBConnector;
-$connexion = new DBConnector('DBBocquet', 'bocquet', 'bocquet');
+require_once '../autoloader.php'; 
+use Database\DBConnector;
+$connexion = new DBConnector('DBbocquet', 'bocquet', 'bocquet');
 ?>

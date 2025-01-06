@@ -10,7 +10,6 @@ class Autoloader {
         $path = str_replace('\\', '/', $fqcn) . '.php';
         $basePath = __DIR__ . '/';
         $file = $basePath . $path;
-        var_dump($file);
         require $file;
             }
 }
