@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php include 'global/head.php'; 
+require_once 'php/utils/UserTools.php';
+####################################################################################################
+if (UserTools::isLogged()) {
+    print_r(var_dump($_SESSION['user']));
+}
+####################################################################################################
 title_html('Poney Club');
 link_to_css('static/accueil.css'); ?>
+
 <body>
     <?php include('global/header.php');  ?>
     <main>
