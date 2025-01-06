@@ -7,14 +7,14 @@ link_to_css('static/inscription.css');?>
     <?php include('global/header.php'); ?>
     <main>
         <section class="form-section">
-            <div>
-                <img id="img-poney" src="img/poney-4.jpg" alt="image poney">
-            </div>
             <div class="form-container">
                 <h1>Inscription</h1>
                 <form action="#" method="post">
-                    <label for="name">Nom - Prénom</label>
-                    <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+                    <label for="name">Nom </label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+                    <label for="name">Prénom</label>
+                    <input type="text" id="prenom" name = "prenom" placeholder="Votre prénom" required>
 
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Votre email" required>
