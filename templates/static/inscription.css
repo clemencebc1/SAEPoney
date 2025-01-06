@@ -7,6 +7,10 @@ main {
     padding: 20px;
 }
 
+#img-poney {
+    height:60px;
+    width:50px;
+}
 .container {
     display: flex;
     gap: 50px;

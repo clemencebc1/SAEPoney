@@ -1,0 +1,82 @@
+
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.next-cours {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.next-cours {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.next-cours .next-cours-info {
+    text-align: center;
+    flex: 1;
+}
+
+.next-cours .cours-date {
+    font-size: 18px;
+    color:black;
+    margin-bottom: 10px;
+}
+
+.next-cours .cours-details {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.next-cours .btn-voir-cours {
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.block-facture {
+    background-color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.clock-icon img {
+    width: 40px;
+    height: 40px;
+}
+
+#days {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+#days-description {
+    font-size: 16px;
+    color: #666;
+}
