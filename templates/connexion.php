@@ -4,6 +4,7 @@
 title_html('Connexion');
 link_to_css('static/connexion.css');
 require_once 'php/utils/UserTools.php';
+//echo hash('sha1', 'LOL123');
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $login = UserTools::login($_POST['email'], $_POST['password']);
     if ($login == true) {

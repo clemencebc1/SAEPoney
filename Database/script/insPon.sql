@@ -372,8 +372,8 @@ Insert into ETRE_PRESENT (IDFACTURE, IDTARIF) values -- concerne les factures et
                                                   (44,3),
                                                   (45,3),
                                                   (46,3);
-INSERT INTO USER (MAIL, PASSWORD) VALUES 
-("in@icloud.org", SHA1("LOL123"));
+INSERT INTO USER (MAIL, PASSWORD, ROLE) VALUES 
+("in@icloud.org", SHA1("LOL123"), "ADHERENT");
 -- insertions qui ne devraient pas marcher
 update PARTICIPER set PAYE = false where IDADH = 9 and IDSEANCE = 1; -- seance deja payee
 

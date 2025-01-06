@@ -6,8 +6,10 @@ class UserTools {
     
     private static function checkDB($username, $password) {
         $db = new PDO('mysql:host=servinfo-maria;dbname=DBrandriantsoa', 'randriantsoa', 'randriantsoa');
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $hash = hash('sha1', $password);
         $query = $db->prepare('SELECT * FROM USER WHERE MAIL = :username AND PASSWORD = :password');
-        $query->execute(array('username' => $username, 'password' => $password));
+        $query->execute(array('username' => $username, 'password' => $hash));
         $result = $query->fetch();
         return $result;
     }
