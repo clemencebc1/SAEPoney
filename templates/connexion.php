@@ -5,6 +5,7 @@ title_html('Connexion');
 link_to_css('static/connexion.css');
 
 ?>
+
 <body>
     <?php include('global/header.php') ?>
     <main>

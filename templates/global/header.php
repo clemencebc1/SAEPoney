@@ -63,7 +63,7 @@ a {
 <header>
         <div class="logo"><a href="index.php">Logo</a></div>
         <nav>
-            <a href="#">Nos tarifs</a>
+            <a href="tarifs.php">Nos tarifs</a>
             <a href="#">Notre planning</a>
             <a href="#">Nos poneys</a>
             <a href="#">Actualités</a>

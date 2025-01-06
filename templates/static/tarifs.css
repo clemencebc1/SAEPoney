@@ -1,0 +1,26 @@
+#card-grid-monthly {
+    visibility: hidden;
+}
+
+#card-grid-yearly {
+    visibility: hidden;
+}
+
+
+
+
+
+#card-grid-monthly.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#card-grid-yearly.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
