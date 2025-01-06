@@ -3,20 +3,19 @@ session_start();
 // classe donnant des outils pour la gestion des utilisateurs
 //connexion / deconnexion / verification de connexion
 class UserTools {
-    // private static function checkDB($username, $password) {
-    //     $db = new PDO('mysql:host=localhost;dbname=php', 'root', '');
-    //     $query = $db->prepare('SELECT * FROM users WHERE username = :username AND password = :password');
-    //     $query->execute(array('username' => $username, 'password' => $password));
-    //     $result = $query->fetch();
-    //     return $result;
-    // }
+    
+    private static function checkDB($username, $password) {
+        $db = new PDO('mysql:host=servinfo-maria;dbname=DBrandriantsoa', 'randriantsoa', 'randriantsoa');
+        $query = $db->prepare('SELECT * FROM USER WHERE MAIL = :username AND PASSWORD = :password');
+        $query->execute(array('username' => $username, 'password' => $password));
+        $result = $query->fetch();
+        return $result;
+    }
 
     public static function login($username, $password) {
-        if ($username === 'admin@admin.fr' && $password === 'admin') {
-            $_SESSION['user'] = array('username' => $username, 'token' => self::generateToken(), 'role' => 'admin');
-            return true;
-        } else if ($username === 'user' && $password === 'user') {
-            $_SESSION['user'] = array('username' => $username, 'token' => self::generateToken(), 'role' => 'user');
+        $user = self::checkDB($username, $password);
+        if ($user) {
+            $_SESSION['user'] = array('username' => $user['MAIL'], 'token' => self::generateToken(), 'role' => $user['ROLE']);
             return true;
         }
         return false;

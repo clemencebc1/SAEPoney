@@ -4,11 +4,6 @@
 title_html('Connexion');
 link_to_css('static/connexion.css');
 require_once 'php/utils/UserTools.php';
-####################################################################################################
-if (UserTools::isLogged()) {
-    print_r(var_dump($_SESSION['user']));
-}
-####################################################################################################
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
     $login = UserTools::login($_POST['email'], $_POST['password']);
     if ($login == true) {
