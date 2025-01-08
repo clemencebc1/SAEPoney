@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace utils;
 use \PDO;
+
 class DBConnector {
     private $pdo;
     public function __construct($nombase, $dbuser, $dbpass){

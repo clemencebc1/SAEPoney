@@ -1,3 +1,10 @@
+<?php
+require_once 'php/autoloader.php';
+Autoloader::register();
+use utils\UserTools;
+UserTools::requireLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
     <?php require_once('php/utils/constantes.php');

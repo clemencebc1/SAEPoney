@@ -9,6 +9,7 @@ use utils\UserTools;
 if (UserTools::isLogged()) {
     print_r(var_dump($_SESSION['user']));
 }
+var_dump($_SESSION['user']);
 ####################################################################################################
 title_html('Poney Club');
 link_to_css('static/accueil.css'); ?>
