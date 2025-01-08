@@ -2,13 +2,13 @@
 namespace utils;
 use utils\DBConnector;
 use \PDO;
-session_start();
 // classe donnant des outils pour la gestion des utilisateurs
 //connexion / deconnexion / verification de connexion
 class UserTools {
     
     private static function checkDB($username, $password) {
-        $db = new PDO('mysql:host=servinfo-maria;dbname=DBrandriantsoa', 'randriantsoa', 'randriantsoa');
+        // $db = new PDO('mysql:host=servinfo-maria;dbname=DBrandriantsoa', 'randriantsoa', 'randriantsoa');
+        $db = new PDO('mysql:host=localhost;dbname=SAEPONEY', 'nathan', 'Nath2005');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $hash = hash('sha1', $password);
         $query = $db->prepare('SELECT * FROM USER WHERE MAIL = :username AND PASSWORD = :password');
@@ -19,11 +19,12 @@ class UserTools {
 
     public static function login($username, $password) {
         $user = self::checkDB($username, $password);
+        $status = false;
         if ($user) {
             $_SESSION['user'] = array('username' => $user['MAIL'], 'token' => self::generateToken(), 'role' => $user['ROLE']);
-            return true;
+            $status = true;
         }
-        return false;
+        return $status;
     }
  
     public static function generateToken() {

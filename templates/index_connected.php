@@ -1,8 +1,12 @@
 <?php
+session_start();
 require_once 'php/autoloader.php';
 Autoloader::register();
 use utils\UserTools;
 UserTools::requireLogin();
+// echo '<pre>';
+// var_dump($_SESSION);
+// echo '</pre>';
 ?>
 
 <!DOCTYPE html>

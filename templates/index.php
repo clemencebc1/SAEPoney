@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="fr">
-<?php include 'global/head.php'; 
-//require_once 'php/utils/UserTools.php';
+<?php
+session_start();
 require_once 'php/autoloader.php';
 Autoloader::register();
 use utils\UserTools;
-####################################################################################################
-if (UserTools::isLogged()) {
-    print_r(var_dump($_SESSION['user']));
-}
-var_dump($_SESSION['user']);
-####################################################################################################
+// $_SESSION['test'] = 'true';
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<?php 
+// phpinfo();
+include 'global/head.php'; 
 title_html('Poney Club');
 link_to_css('static/accueil.css'); ?>
 

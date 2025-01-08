@@ -55,13 +55,10 @@
         color:black;
         text-decoration: none;
     }
+
+
 </style>
-<!--<?php require_once 'php/utils/UserTools.php'; ?>-->
-    <?php 
-    require_once 'php/autoloader.php';
-    Autoloader::register();
-    use utils\UserTools;
-    ?>
+
     <header>
             <div class="logo"><a href="index_connected.php">Logo</a></div>
             <nav>
@@ -71,6 +68,6 @@
                
             </nav>
             <div class="bouton-compte">
-                <button class="compte-view"><a href="index.php"><?php UserTools::logout(); ?>Mon compte</a></button>
+                <button class="compte-view"><a href="logout.php">Mon compte</a></button>
             </div>
     </header>
