@@ -66,7 +66,7 @@ a {
             <a href="#">Nos tarifs</a>
             <a href="#">Notre planning</a>
             <a href="poneys.php">Nos poneys</a>
-            <a href="#">Actualités</a>
+            <a href="actualites.php">Actualités</a>
             <a href="#">Témoignages</a>
             <a href="#">Contact</a>
         </nav>
