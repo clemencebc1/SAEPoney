@@ -7,7 +7,7 @@ link_to_css('static/avis.css');?>
 <body>
     <?php include('global/header.php'); ?>
     <main>
-<h1>Témoignages de nos fidèles mini cavaliers et leurs parents</h1>
+      <h1>Témoignages de nos fidèles mini cavaliers et leurs parents</h1>
     <div class="avis-container">
       <div class="avis-card">
         <h3>Léo</h3>

@@ -19,7 +19,7 @@ header .logo {
 
 nav {
     display: flex;
-    gap: 40px;
+    gap: 55px;
 }
 
 nav a {
@@ -64,7 +64,7 @@ a {
         <div class="logo"><a href="index.php">Logo</a></div>
         <nav>
             <a href="#">Nos tarifs</a>
-            <a href="#">Notre planning</a>
+            <a href="planning-club.php">Notre planning</a>
             <a href="poneys.php">Nos poneys</a>
             <a href="actualites.php">Actualités</a>
             <a href="avis.php">Témoignages</a>
