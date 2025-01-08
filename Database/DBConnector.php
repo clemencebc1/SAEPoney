@@ -77,13 +77,9 @@ class DBConnector {
         $sql = "SELECT * FROM SEANCE;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $allinfo = array();
-        foreach($rows as $array){
-            $info = array($array["IDSEANCE"], $array["NUMCOURS"], $array["PRIX"], $array["DUREE"], $array["NIVEAU"], $array["DESCRIPTIF"], $array["GROUPE_AGE"], $array["DATE_SEANCE"]);
-            array_push($allinfo, $info);
-        }
-        return $info;
-    }    
+        return $rows;
+    }
+
     /**
      * get_personnes, get l'ensemble des personnes dans la base de donnees
      *
