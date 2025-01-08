@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
-namespace Database;
+namespace utils;
 use \PDO;
 class DBConnector {
     private $pdo;

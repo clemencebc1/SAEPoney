@@ -1,4 +1,7 @@
 <?php
+namespace utils;
+use utils\DBConnector;
+use \PDO;
 session_start();
 // classe donnant des outils pour la gestion des utilisateurs
 //connexion / deconnexion / verification de connexion

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php include 'global/head.php'; 
-require_once 'php/utils/UserTools.php';
+//require_once 'php/utils/UserTools.php';
+require_once 'php/autoloader.php';
+Autoloader::register();
+use utils\UserTools;
 ####################################################################################################
 if (UserTools::isLogged()) {
     print_r(var_dump($_SESSION['user']));

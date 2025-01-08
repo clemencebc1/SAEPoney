@@ -56,7 +56,12 @@
         text-decoration: none;
     }
 </style>
-<?php require_once 'php/utils/UserTools.php'; ?>
+<!--<?php require_once 'php/utils/UserTools.php'; ?>-->
+    <?php 
+    require_once 'php/autoloader.php';
+    Autoloader::register();
+    use utils\UserTools;
+    ?>
     <header>
             <div class="logo"><a href="index_connected.php">Logo</a></div>
             <nav>
