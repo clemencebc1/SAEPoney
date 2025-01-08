@@ -4,6 +4,9 @@ require_once 'php/autoloader.php';
 Autoloader::register();
 use utils\UserTools;
 // $_SESSION['test'] = 'true';
+if (UserTools::isLogged()) {
+    header('Location: index_connected.php');
+}
 ?>
 
 <!DOCTYPE html>
