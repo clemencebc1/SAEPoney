@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <?php include('global/head.php'); 
-title_html('Actualites');
-link_to_css('static/actualites.css');?>
+title_html('Avis');
+link_to_css('static/avis.css');?>
 <body>
     <?php include('global/header.php'); ?>
     <main>
