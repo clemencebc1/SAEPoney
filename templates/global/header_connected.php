@@ -55,7 +55,8 @@
         color:black;
         text-decoration: none;
     }
-    </style>
+</style>
+<?php require_once 'php/utils/UserTools.php'; ?>
     <header>
             <div class="logo"><a href="index_connected.php">Logo</a></div>
             <nav>
@@ -65,6 +66,6 @@
                
             </nav>
             <div class="bouton-compte">
-                <button class="compte-view"><a href="#">Mon compte</a></button>
+                <button class="compte-view"><a href="index.php"><?php UserTools::logout(); ?>Mon compte</a></button>
             </div>
     </header>

@@ -36,12 +36,7 @@ class DBConnector {
         $sql = "SELECT * FROM PONEY;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $allinfo = array();
-        foreach($rows as $array){
-            $info = array($array["IDPO"], $array["NOMPO"], $array["DDNPO"], $array["POIDS_MAX"], $array["RACE"], $array["SEXE"]);
-            array_push($allinfo, $info);
-        }
-        return $info;
+        return $rows;
     }    
     /**
      * get_cours, get l'ensemble des cours dans la base de données
