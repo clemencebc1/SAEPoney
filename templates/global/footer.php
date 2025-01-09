@@ -4,6 +4,7 @@ footer {
     padding: 10px;
     border-top: 1px solid #ddd;
     font-size: 14px;
+    margin-top : 100px;
 }
 
 .media {
