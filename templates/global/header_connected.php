@@ -60,12 +60,12 @@
     <header>
             <div class="logo"><a href="index_connected.php">Logo</a></div>
             <nav>
-                <a href="#">Votre planning</a>
+                <a href="planning-adherent.php">Votre planning</a>
                 <a href="#">Votre niveau</a>
                 <a href="#">Vos factures</a>
                
             </nav>
             <div class="bouton-compte">
-                <button class="compte-view"><a href="index.php"><?php UserTools::logout(); ?>Mon compte</a></button>
+                <button class="compte-view"><a href="index.php">Mon compte</a></button>
             </div>
     </header>

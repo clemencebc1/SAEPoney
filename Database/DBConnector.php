@@ -5,7 +5,8 @@ use \PDO;
 class DBConnector {
     private $pdo;
     public function __construct($nombase, $dbuser, $dbpass){
-        $this->pdo= new PDO('mysql:host=servinfo-maria;dbname='.$nombase.'', $dbuser, $dbpass);
+        // $this->pdo= new PDO('mysql:host=servinfo-maria;dbname='.$nombase.'', $dbuser, $dbpass);
+        $this->pdo= new PDO('mysql:host=localhost;dbname='.$nombase);
     }
     
     /**
@@ -55,7 +56,7 @@ class DBConnector {
         return $info;
     }
     
-    public function get_seance_for_user(string $user){
+    public function get_seances_for_user(string $user){
         $sql = "SELECT DISTINCT DESCRIPTIF, DATE_SEANCE FROM SEANCE NATURAL JOIN PARTICIPER NATURAL JOIN ADHERENT NATURAL JOIN PERSONNE WHERE EMAIL='in@icloud.org' AND IDADH=IDPER;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
@@ -145,6 +146,18 @@ class DBConnector {
         }
         return $info;
     }    
+
+/**
+     * get_factures, get factures user 
+     *
+     * @return array ensemble des factures d'un utilisateur
+     */
+    public function get_factures_user(string $user){
+        $sql = "SELECT DATEEDITION, PAYE, TOTALTTC, DESCRIPTIF FROM FACTURE NATURAL JOIN PERSONNE NATURAL JOIN PARTICIPER NATURAL JOIN SEANCE WHERE IDADH=IDPER AND MAIL='". $user ."'";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
     /**
      * get_tarifs, get l'ensemble des tarifs de la base de donnees
      *

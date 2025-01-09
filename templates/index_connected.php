@@ -17,7 +17,7 @@
                     ?>
                      Votre prochain cours a lieu le <strong><?php echo $cours_user[$compteur] ?></strong></p>
                 <p class="cours-details"><?php echo $cours_user[1] ?></p>
-                <button class="btn-voir-cours">Voir tous mes cours</button>
+                <button class="btn-voir-cours"><a>Voir tous mes cours</a></button>
             </div>
             <button class="right">&gt;</button>
         </section>
