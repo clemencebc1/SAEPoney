@@ -11,7 +11,7 @@ catch (Exception $e) {
 }
 ?>
 <body>
-    <?php include('global/header.php'); ?>
+    <?php include('global/header_connected.php'); ?>
     <main></main>
     <div class="container">
         <h1>Vos factures</h1>
