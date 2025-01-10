@@ -1,12 +1,19 @@
+<?php
+session_start();
+require_once 'php/autoloader.php';
+Autoloader::register();
+use utils\UserTools;
+// $_SESSION['test'] = 'true';
+if (UserTools::isLogged()) {
+    header('Location: index_connected.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
-<?php include 'global/head.php'; 
-require_once 'php/utils/UserTools.php';
-####################################################################################################
-if (UserTools::isLogged()) {
-    print_r(var_dump($_SESSION['user']));
-}
-####################################################################################################
+<?php 
+// phpinfo();
+include 'global/head.php'; 
 title_html('Poney Club');
 link_to_css('static/accueil.css'); ?>
 

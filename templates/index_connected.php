@@ -1,6 +1,17 @@
+<?php
+session_start();
+require_once 'php/autoloader.php';
+Autoloader::register();
+use utils\UserTools;
+UserTools::requireLogin();
+// echo '<pre>';
+// var_dump($_SESSION);
+// echo '</pre>';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
-    <?php require_once('../constantes/constantes.php');
+    <?php require_once('php/utils/constantes.php');
     include 'global/head.php'; 
     title_html('Connected');
     link_to_css('static/accueil_2.css'); ?>

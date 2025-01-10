@@ -1,3 +1,9 @@
+<?php 
+require_once('php/autoloader.php');
+Autoloader::register(); 
+use utils\DBConnector;?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <?php include('global/head.php'); 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-<?php try { require_once('../constantes/constantes.php');
+<?php try { require_once('php/utils/constantes.php');
 include('global/head.php'); 
 title_html('Factures adhérent');
 link_to_css('static/factures.css');

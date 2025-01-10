@@ -1,6 +1,8 @@
 <?php
-
-require_once(__DIR__ . "/../../../constantes/constantes.php");
+require_once('../autoloader.php');
+Autoloader::register();
+use utils\DBConnector;
+$connexion = new DBConnector('DBbocquet', 'bocquet', 'bocquet');
 $raws_events = $connexion->get_seances_for_user("in@cloud.org");
 
 header('Content-Type: application/json');
