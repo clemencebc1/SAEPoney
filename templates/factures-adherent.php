@@ -4,10 +4,10 @@
 include('global/head.php'); 
 title_html('Factures adhérent');
 link_to_css('static/factures.css');
-$factures = $connexion->get_seances_for_user("in@cloud.org");
+$factures = $connexion->get_factures_user("in@cloud.org");
 }
 catch (Exception $e) {
-    $factures = array(array("PAYE"=>true, "DESCRIPTIF"=>"groom", "DATEEDITION"=>"2024-12" ), array("PAYE"=>false, "DESCRIPTIF"=>"groom2", "DATEEDITION"=>"2024-12" ));
+    $factures = array();
 }
 ?>
 <body>
@@ -19,7 +19,9 @@ catch (Exception $e) {
                 ?>
         <div class="bloc">
             <div class="facture-header">
-                <?php if($facture["PAYE"]){
+                <?php
+                var_dump($facture);
+                if($facture["PAYE"]==1){
                     echo "&#x1F6A8;";
                     echo "<style> border-left: 5px solid #2ecc71;</style>";
                 }
@@ -31,9 +33,10 @@ catch (Exception $e) {
                 echo "<h3>Facture du " . $facture["DATEEDITION"] . "</h3>";
                 ?>
             </div>
-            <div><?php echo "Facture du cours" . $facture["DESCRIPTIF"] . " - " .  $facture["DATEEDITION"] ?>
-            <?php if ($facture["PAYE"]){ echo "<br>Vous possédez d'un délai de deux semaines pour régler votre facture. Il vous reste 8 jours.</p>" ; } }?>
-        </div>
+            <div><?php echo "Facture du cours" . $facture["DESCRIPTIF"] . " - " .  $facture["DATEEDITION"]; ?>
+            <?php if ($facture["PAYE"]==1){ echo "<br>Vous possédez d'un délai de deux semaines pour régler votre facture. Il vous reste 8 jours.</p>" ; } ?>
+        </div> </div>
+        <?php } ?>
     </main>
     <?php include('global/footer.php'); ?>
 </body>

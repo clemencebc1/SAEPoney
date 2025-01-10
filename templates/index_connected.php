@@ -12,12 +12,12 @@
             <button class="left">&lt;</button>
             <div class="next-cours-info">
                 <p class="cours-date">
-                    <?php $cours_user = $connexion->get_seance_for_user('in@icloud.org'); 
+                    <?php $cours_user = $connexion->get_seances_for_user('in@icloud.org'); 
                         $compteur = 0;
                     ?>
                      Votre prochain cours a lieu le <strong><?php echo $cours_user[$compteur] ?></strong></p>
                 <p class="cours-details"><?php echo $cours_user[1] ?></p>
-                <button class="btn-voir-cours"><a>Voir tous mes cours</a></button>
+                <button class="btn-voir-cours"><a href="planning-adherent.php">Voir tous mes cours</a></button>
             </div>
             <button class="right">&gt;</button>
         </section>

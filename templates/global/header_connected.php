@@ -62,7 +62,7 @@
             <nav>
                 <a href="planning-adherent.php">Votre planning</a>
                 <a href="#">Votre niveau</a>
-                <a href="#">Vos factures</a>
+                <a href="factures-adherent.php">Vos factures</a>
                
             </nav>
             <div class="bouton-compte">
