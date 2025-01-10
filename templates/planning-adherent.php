@@ -1,7 +1,10 @@
 <?php 
+session_start();
 require_once('php/autoloader.php');
 Autoloader::register(); 
-use utils\DBConnector;?>
+use utils\DBConnector;
+use utils\UserTools;
+UserTools::requireLogin();?>
 
 
 <!DOCTYPE html>
@@ -16,22 +19,22 @@ link_to_css('static/planning.css');?>
     <?php include('global/header_connected.php'); ?>
     <main>
         <div id="calendar"></div>
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        let calendarEl = document.getElementById('calendar');
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                let calendarEl = document.getElementById('calendar');
+                
+                let calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth', 
+                    locale: 'fr',               
+                    events: 'php/utils/calendar-adherent.php', 
+                    dateClick: function (info) {
+                        alert('Date cliquée : ' + info.dateStr); 
+                    },
+                });
         
-        let calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth', 
-            locale: 'fr',               
-            events: 'php/utils/calendar-adherent.php', 
-            dateClick: function (info) {
-                alert('Date cliquée : ' + info.dateStr); 
-            }
-        });
-
-        calendar.render();
-    });
-    </script>
+                calendar.render();
+            });
+            </script>
 
     </main>
     <?php include('global/footer.php'); ?>

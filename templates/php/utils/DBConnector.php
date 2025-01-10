@@ -49,24 +49,14 @@ class DBConnector {
         $sql = "SELECT * FROM COURS;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $allinfo = array();
-        foreach($rows as $array){
-            $info = array($array["NUMCOURS"], $array["NOMCOURS"], $array["TYPEC"]);
-            array_push($allinfo, $info);
-        }
-        return $info;
+        return $rows;
     }
     
     public function get_seances_for_user(string $user){
         $sql = "SELECT DISTINCT DESCRIPTIF, DATE_SEANCE FROM SEANCE NATURAL JOIN PARTICIPER NATURAL JOIN ADHERENT NATURAL JOIN PERSONNE WHERE EMAIL='in@icloud.org' AND IDADH=IDPER;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $allinfo = array();
-        foreach($rows as $array){
-            $info = array($array["DATE_SEANCE"], $array["DESCRIPTIF"]);
-            array_push($allinfo, $info);
-        }
-        return $info;
+        return $rows;
     }
 
 
@@ -91,12 +81,7 @@ class DBConnector {
         $sql = "SELECT * FROM PERSONNE;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $allinfo = array();
-        foreach($rows as $array){
-            $info = array($array["IDPER"], $array["NOMPER"], $array["PRENOMPER"], $array["EMAIL"], $array["DDNPER"], $array["POIDS"], $array["ADRESSE"], $array["PORTABLE"]);
-            array_push($allinfo, $info);
-        }
-        return $info;
+        $rows;
     }
         
     /**
@@ -108,12 +93,7 @@ class DBConnector {
         $sql = "SELECT * FROM MONITEUR;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $allinfo = array();
-        foreach($rows as $array){
-            $info = array($array["IDMON"], $array["TYPECONTRAT"], $array["DATEEMBAUCHE"]);
-            array_push($allinfo, $info);
-        }
-        return $info;
+        $rows;
     }    
     /**
      * get_adherents, get l'ensemble des adherents dans la base de données
@@ -124,12 +104,7 @@ class DBConnector {
         $sql = "SELECT * FROM ADHERENT;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $allinfo = array();
-        foreach($rows as $array){
-            $info = array($array["IDADH"], $array["FINCOTISATION"], $array["NIVEAUGALOT"]);
-            array_push($allinfo, $info);
-        }
-        return $info;
+        $rows;
     }    
     /**
      * get_factures, get l'ensemble des factures de la base de donnes
@@ -140,12 +115,7 @@ class DBConnector {
         $sql = "SELECT * FROM FACTURE;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $allinfo = array();
-        foreach($rows as $array){
-            $info = array($array["IDFACTURE"], $array["TOTALTTC"], $array["DATEEDITION"], $array["IDADH"]);
-            array_push($allinfo, $info);
-        }
-        return $info;
+        return $rows;
     }    
 
 /**
@@ -169,12 +139,7 @@ class DBConnector {
         $sql = "SELECT * FROM TARIFS;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $allinfo = array();
-        foreach($rows as $array){
-            $info = array($array["IDTARIF"], $array["ANNEE"], $array["PRIX"]);
-            array_push($allinfo, $info);
-        }
-        return $info;
+        return $rows;
     }
     public function get_encadrer_moniteur(int $idmon): void {
         $sql = "SELECT IDSEANCE FROM ENCADRER WHERE IDMON = ?";

@@ -20,7 +20,7 @@ link_to_css('static/planning.css');?>
             events: 'php/utils/calendar.php', 
             dateClick: function (info) {
                 alert('Date cliquée : ' + info.dateStr); 
-            }
+            },
         });
 
         calendar.render();

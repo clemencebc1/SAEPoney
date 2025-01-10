@@ -18,8 +18,11 @@ function to_fullcalendar($events){
             unset($data['DATE_SEANCE']);       
         }
     }
+    return $events;
 }
+
 $events = to_fullcalendar($raws_events);
-echo json_encode($raws_events);
+echo json_encode($events);
+
 
 ?>
