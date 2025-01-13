@@ -6,8 +6,8 @@ use \PDO;
 class DBConnector {
     private $pdo;
     public function __construct($nombase, $dbuser, $dbpass){
-        $this->pdo= new PDO('mysql:host=servinfo-maria;dbname='.$nombase.'', $dbuser, $dbpass);
-        //$this->pdo= new PDO('mysql:host=localhost;dbname='.$nombase);
+        // $this->pdo= new PDO('mysql:host=servinfo-maria;dbname='.$nombase.'', $dbuser, $dbpass);
+        $this->pdo= new PDO('mysql:host=localhost;dbname='.$nombase, $dbuser, $dbpass);
     }
     
     /**
@@ -149,6 +149,55 @@ class DBConnector {
 
     }
 
+    public function get_next_id_personne(): int {
+        $sql = "SELECT MAX(IDPER) FROM PERSONNE";
+        $stmt = $this->pdo->query($sql);
+        $id = $stmt->fetch();
+        return $id[0] + 1;
+    }
+
+
+    public function insertion_personne(int $id ,string $nom, string $prenom, string $email, string $date_naissance, string $poids, string $adresse,string $tel): void {
+        $sql = "INSERT INTO PERSONNE (IDPER, NOMPER, PRENOMPER, EMAIL, DDNPER, POIDS, ADRESSE, PORTABLE) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id, $nom, $prenom, $email, $date_naissance, $poids, $adresse, $tel]);
+    }
+
+    // public function insertion_adherent(int $idadh, string $date, string $niveau): void {
+    //     $sql = "INSERT INTO ADHERENT (IDADH, FINCOTISATION, NIVEAUGALOT) VALUES (:id, STR_TO_DATE(':date', '%d-%m-%Y'), :niveau)";
+    //     $stmt = $this->pdo->prepare($sql);
+    //     $stmt->bindparam(':id', $idadh);
+    //     $stmt->bindparam(':date', $date);
+    //     $stmt->bindparam(':niveau', $niveau);
+    //     $stmt->execute();
+    // }
+
+    // public function insertion_moniteur(int $idmon, $contract, string $date): void {
+    //     $sql = "INSERT INTO MONITEUR (IDMON, TYPECONTRAT, DATEEMBAUCHE) VALUES (:id, :contract, STR_TO_DATE(':date', '%d-%m-%Y'))";
+    //     $stmt = $this->pdo->prepare($sql);
+    //     $stmt->bindparam(':id', $idmon);
+    //     $stmt->bindparam(':contract', $contract);
+    //     $stmt->bindparam(':date', $date);
+    //     $stmt->execute();
+    // }
+
+    public function insertion_adherent(int $idadh, string $date, string $niveau): void {
+        $sql = "INSERT INTO ADHERENT (IDADH, FINCOTISATION, NIVEAUGALOT) VALUES (:id, STR_TO_DATE(':date', '%d-%m-%Y'), :niveau)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $idadh);
+        $stmt->bindParam(':date', $date);
+        $stmt->bindParam(':niveau', $niveau);
+        $stmt->execute();
+    }
+
+    public function insertion_moniteur(int $idmon, $contract, string $date): void {
+        $sql = "INSERT INTO MONITEUR (IDMON, TYPECONTRAT, DATEEMBAUCHE) VALUES (:id, :contract, STR_TO_DATE(':date', '%d-%m-%Y'))";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $idmon);
+        $stmt->bindParam(':contract', $contract);
+        $stmt->bindParam(':date', $date);
+        $stmt->execute();
+    }
 
 }
 ?>

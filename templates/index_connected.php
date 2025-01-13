@@ -20,7 +20,7 @@ UserTools::requireLogin();
             <button class="left">&lt;</button>
             <div class="next-cours-info">
                 <p class="cours-date">
-                    <?php $cours_user = $connexion->get_seances_for_user('in@icloud.org'); 
+                    <?php $cours_user = $connexion->get_seances_for_user($_SESSION['user']['username']); 
                         $compteur = 0;
                     ?>
                      Votre prochain cours a lieu le <strong><?php echo $cours_user[$compteur] ?></strong></p>
