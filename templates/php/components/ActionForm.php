@@ -43,18 +43,15 @@ class ActionForm {
 
     private function registerMoniteurForm(): string {
         return '<form action="administrator_control_pannel.php?action=registerMoniteur&submit=true" method="post">
-        <label for="nom">Nom</label>
-        <input type="text" id="nom" name="nom" required>
-        <label for="prenom">Prénom</label>
-        <input type="text" id="prenom" name="prenom" required>
-        <label for="mail">Mail</label>
-        <input type="email" id="mail" name="mail" required>
-        <label for="adresse">Adresse</label>
-        <input type="text" id="adresse" name="adresse" required>
-        <label for="tel">Téléphone</label>
-        <input type="tel" id="tel" name="tel" required>
-        <label for="date_naissance">Date de naissance</label>
-        <input type="date" id="date_naissance" name="date_naissance" required>
+        ' . $this->personneBlock() . '
+        <label for="typecontrat">Type de contrat</label>
+        <select name="typecontrat" id="typecontrat">
+            <option value="CDI">CDI</option>
+            <option value="CDD">CDD</option>
+            <option value="INTERIM">Interim</option>
+        </select>
+        <label for="dateembauche">Date d\'embauche</label>
+        <input type="date" id="dateembauche" name="dateembauche" required>
         <input type="submit" value="inscrire">
         </form>';
     }

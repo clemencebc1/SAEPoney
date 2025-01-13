@@ -60,24 +60,21 @@ if (isset($_GET['action']) && isset($_GET['submit'] )? $_GET['submit'] : false )
             echo "<color style='color: g    reen;'>Ajout dans BD</color>";
             break;
         case 'registerMoniteur':
-            $db = DBConnector::getDatabase();
-            $db->insertMoniteur($_POST['nom'], $_POST['prenom'], $_POST['tel'], $_POST['date_naissance']);
+            $nextId = $db->get_next_id_personne();
+            $db -> insertion_personne($nextId, $_POST['nom'], $_POST['prenom'], $_POST['mail'], $_POST['date_naissance'], $_POST['poids'], $_POST['adresse'], $_POST['tel']);
+            $db -> insertMoniteur($nextId, $_POST['typecontrat'], $_POST['dateembauche']);
             break;
         case 'registerCours':
-            $db = DBConnector::getDatabase();
-            $db->insertCours($_POST['nom'], $_POST['description'], $_POST['moniteur_id']);
+            echo "<color style='color: green;'>Not yet implemented</color>";
             break;
         case 'registerPoney':
-            $db = DBConnector::getDatabase();
-            $db->insertPoney($_POST['nom'], $_POST['taille'], $_POST['poids']);
+            echo "<color style='color: green;'>Not yet implemented</color>";
             break;
         case 'registerSeance':
-            $db = DBConnector::getDatabase();
-            $db->insertSeance($_POST['date'], $_POST['cours_id'], $_POST['moniteur_id']);
+            echo "<color style='color: green;'>Not yet implemented</color>";
             break;
         case 'registerUser':
-            $db = DBConnector::getDatabase();
-            $db->insertUser($_POST['email'], $_POST['password'], $_POST['role']);
+            echo "<color style='color: green;'>Not yet implemented</color>";
             break;
         default:
             break;
