@@ -1,4 +1,6 @@
-<?php require_once 'php/autoloader.php';
+<?php 
+session_start();
+require_once 'php/autoloader.php';
 Autoloader::register();
 use utils\UserTools;
 UserTools::requireLogin();?>

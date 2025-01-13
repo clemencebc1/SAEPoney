@@ -213,7 +213,10 @@ values (1, 25, 1, 1, "baby poney", "moins de 6 ans", 6, STR_TO_DATE("16/10/2024:
        (5, 35, 1,1, "baby grand poney", "plus de 6 ans - moins de 10 ans", 6,STR_TO_DATE("23/10/2024:10/00","%d/%m/%Y:%H/%i")),
        (6, 27, 2,2, "grand poney", "plus de 8 ans - moins de 12 ans", 6,STR_TO_DATE("24/10/2024:10/00","%d/%m/%Y:%H/%i")),
        (8, 46, 1,1, "groom individuel", " - ", 7,STR_TO_DATE("17/10/2024:12/00","%d/%m/%Y:%H/%i")),
-       (7, 46, 1,1, "groom individuel", " - ", 7,STR_TO_DATE("24/10/2024:14/00","%d/%m/%Y:%H/%i"));
+       (7, 46, 1,1, "groom individuel", " - ", 7,STR_TO_DATE("24/10/2024:14/00","%d/%m/%Y:%H/%i")),
+       (9, 26,2,1,"groom collectif", " - ", 6, STR_TO_DATE("13/01/2025:14/00", "%d/%m/%Y:%H/%i")),
+       (10, 26,2,1,"groom collectif", " - ", 6, STR_TO_DATE("12/01/2025:14/00", "%d/%m/%Y:%H/%i")),
+       (11, 28,2,1,"baby poney", " - ", 6, STR_TO_DATE("11/01/2025:14/00", "%d/%m/%Y:%H/%i"));
 
 Insert into ENCADRER (IDMON, NUMCOURS, DATEENC, IDSEANCE) values
                                                               (11, 6, STR_TO_DATE("16/10/2024:14/10","%d/%m/%Y:%H/%i"), 1),
@@ -238,7 +241,9 @@ Insert into PARTICIPER (NUMCOURS, IDADH, IDSEANCE, IDPO, PAYE) values
                                                                              (6, 16,3,2,true),
                                                                              (6, 8,3,3,false),
                                                                              (6, 6,3,4,true),
-                                                                             (7, 10,7,4,true)
+                                                                             (7, 10,7,4,true),
+                                                                             (6, 1, 10, 7, false);
+                                                                             
                                                                              ;
 
 Insert into TARIFS (IDTARIF, ANNEE, PRIX) values

@@ -20,11 +20,11 @@ UserTools::requireLogin();
             <button class="left">&lt;</button>
             <div class="next-cours-info">
                 <p class="cours-date">
-                    <?php $cours_user = $connexion->get_seances_for_user('in@icloud.org'); 
+                    <?php $cours_user = $connexion->get_seances_for_user($_SESSION['user']['username']); 
                         $compteur = 0;
                     ?>
                      Votre prochain cours a lieu le <strong><?php echo $cours_user[$compteur]["DATE_SEANCE"] ?></strong></p>
-                <p class="cours-details"><?php echo $cours_user[1] ?></p>
+                <p class="cours-details"><?php echo $cours_user[$compteur]['DESCRIPTIF'] ?></p>
                 <button class="btn-voir-cours"><a href="planning-adherent.php">Voir tous mes cours</a></button>
             </div>
             <button class="right">&gt;</button>
@@ -37,13 +37,12 @@ UserTools::requireLogin();
                 <?php $factures = $connexion->get_factures_user($_SESSION['user']['username']);
                 foreach ($factures as $facture){
                     if (!($facture["PAYE"])){
-                        echo "<p id='days'>3 jours</p>
-                <p id='days-description'>Facture à payer</p>";
+                        echo "<p id='days'><a href='factures-adherent.php'> 10 jours pour régler </a> </p>
+                <p id='days-description'>Facture à payer du " . $facture["DATEEDITION"] ."</p>";
                 break;
                     }
-                    else{ echo "<p id='days'> Aucune facture </p>";
-                break;}
-                }?>
+                }
+                ?>
             </div>
         </section>
     </main>
