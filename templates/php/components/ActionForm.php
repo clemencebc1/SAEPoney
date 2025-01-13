@@ -12,19 +12,19 @@ class ActionForm {
         <div class="side-container">
         <div id="personal-form">
         <label for="nom">Nom</label>
-        <input type="text" id="nom" name="nom" required>
+        <input type="text" id="nom" name="nom" placeholder="Nom" required>
         <label for="prenom">Prénom</label>
-        <input type="text" id="prenom" name="prenom" required>
+        <input type="text" id="prenom" name="prenom" placeholder="Prenom" required>
         <label for="mail">Mail</label>
-        <input type="email" id="mail" name="mail" required> 
+        <input type="email" id="mail" name="mail" placeholder="mail@mail.fr" required> 
         <label for="date_naissance">Date de naissance</label>
         <input type="date" id="date_naissance" name="date_naissance" required>
-        <label for="poids">Poids</label>
-        <input type="number" id="poids" name="poids" required>
+        <label for="poids">Poids en Kg</label>
+        <input type="number" id="poids" name="poids" placeholder="30" required>
         <label for="adresse">Adresse</label>
-        <input type="text" id="adresse" name="adresse" required>
+        <input type="text" id="adresse" name="adresse" placeholder="Adresse postale" required>
         <label for="tel">Téléphone</label>
-        <input type="tel" id="tel" name="tel" required>
+        <input type="tel" id="tel" name="tel" placeholder="Numéro de portable" required>
         </div>
         </div>      
         ';
@@ -33,6 +33,9 @@ class ActionForm {
     private function registerAdherentForm(): string {
         return '
         <form action="administrator_control_pannel.php?action=registerAdherent&submit=true" method="post">
+        <div id="title">
+        <h1> Inscription d\'un Adhérent </h1>
+        </div>
         <div id="container">
         ' . $this->personneBlock() . '
         <div class="side-container">
@@ -52,7 +55,11 @@ class ActionForm {
     }
 
     private function registerMoniteurForm(): string {
-        return '<form action="administrator_control_pannel.php?action=registerMoniteur&submit=true" method="post">
+        return '
+        <form action="administrator_control_pannel.php?action=registerMoniteur&submit=true" method="post">
+        <div id="title">
+        <h1> Inscription d\'un Moniteur </h1>
+        </div>
         <div id="container">
         ' . $this->personneBlock() . '
         <div class="side-container">
@@ -72,26 +79,32 @@ class ActionForm {
         </form>';
     }
 
-    private function registerCoursForm(): string {return '';}
+    private function registerCoursForm(): string {return '<h1> Fonction bientôt disponible </h1>';}
 
-    private function registerPoney(): string {return '';}
+    private function registerPoneyForm(): string {return '<h1> Fonction bientôt disponible </h1>';}
 
-    private function registerSeanceForm(): string {return '';}
+    private function registerSeanceForm(): string {return '<h1> Fonction bientôt disponible </h1>';}
 
     private function registerUserForm(): string {
-        return '<form action="administrator_control_pannel.php?action=registerUser&submit=true" method="post">
-        <label for="email">email de la personne</label>
-        <input type="email" id="email" name="email" required>
+        return '
+        <form action="administrator_control_pannel.php?action=registerUser&submit=true" method="post">
+        <div id="title">
+        <h1> Inscription d\'un utilisateur pour une Personne </h1>
+        </div>
+        <div id="custom-form">
+        <label for="email">Email de la personne</label>
+        <input type="email" id="email" name="email" placeholder="exemple@mail.fr"required>
         <label for="password">Mot de passe temporaire</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" placeholder="Mot de passe" required>
         <label for="confirmPassword">Confirmer le mot de passe</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirmer mot de passe" required>
         <label for="role">Role</label>
         <select name="role" id="role">
             <option value="ADHERENT">Adherent</option>
             <option value="MONITEUR">Moniteur</option>
             <option value="ADMIN">Admin</option>
         </select>
+        </div>
         <input type="submit" value="inscrire">
         </form>';
 
@@ -109,7 +122,7 @@ class ActionForm {
                 $render =   $this->registerCoursForm();
                 break;
             case 'action=registerPoney':
-                $render =   $this->registerPoney();
+                $render =   $this->registerPoneyForm();
                 break;
             case 'registerSeance':
                 $render =   $this->registerSeanceForm();
