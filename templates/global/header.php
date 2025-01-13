@@ -1,64 +1,57 @@
 <style>
-body {
-    font-family: Arial, sans-serif; /* police d'écriture à modifier */
-    line-height: 1.6;
-}
+    body {
+        font-family: Arial, sans-serif; /* police d'écriture à modifier */
+        line-height: 1.6;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+    }
+    header .logo img{
+        height:75px;
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
-}
-
-header img {
-    height : 100px;
-}
-
-
-nav {
-    display: flex;
-    gap: 55px;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-}
-.boutons-log {
-    display: flex;
-}
-
-.buttons-log button {
-    flex-wrap: nowrap;
-    margin-left: 10px;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    background-color: white;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.sign-in:hover {
-    background-color: #f0f0f0;
-}
-.register:hover {
-    background-color:#2e2d2d;
-}
-
-.boutons-log .register, .register a {
-    background-color: black;
-    color: white;
-}
-.sign-in {
-    color: black;
-}
-a {
-    color:black;
-    text-decoration: none;
-}
+    }
+    nav {
+        display: flex;
+        gap: 55px;
+    }
+    nav a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+    }
+    .boutons-log {
+        display: flex;
+    }
+    .boutons-log button {
+        flex-wrap: wrap;
+        margin-left: 10px;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        background-color: white;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    .sign-in:hover {
+        background-color: #f0f0f0;
+    }
+    .register:hover {
+        background-color:#2e2d2d;
+    }
+    .boutons-log .register, .register a {
+        background-color: black;
+        color: white;
+    }
+    .sign-in {
+        color: black;
+    }
+    a {
+        color:black;
+        text-decoration: none;
+    }
 </style>
 <header>
         <div class="logo">

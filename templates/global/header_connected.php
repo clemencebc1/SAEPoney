@@ -13,9 +13,9 @@
         border-bottom: 1px solid #ccc;
     }
     
-    header .logo {
-        font-size: 24px;
-        font-weight: bold;
+    header img{
+        height:75px;
+
     }
     
     nav {
@@ -60,7 +60,7 @@
 </style>
 
     <header>
-            <div class="logo"><a href="index_connected.php">Logo</a></div>
+        <a href="index.php"><img src="img/grand_galot.jpg" alt="logo"></a>
             <nav>
                 <a href="planning-adherent.php">Votre planning</a>
                 <a href="niveau.php">Votre niveau</a>

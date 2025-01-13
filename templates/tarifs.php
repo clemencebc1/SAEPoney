@@ -4,26 +4,23 @@
 title_html('Nos Tarifs');
 link_to_css('static/tarifs.css');
 ?>
-<script>
+<script> 
+    // PRODUIT A L'AIDE DE CHATPGT
     document.addEventListener("DOMContentLoaded", function () {
     const toggleButtons = document.querySelectorAll(".toggle-btn");
     const monthlyGrid = document.getElementById("card-grid-monthly");
     const yearlyGrid = document.getElementById("card-grid-yearly");
 
-    // Initialiser la visibilité
     yearlyGrid.classList.add("visible");
     monthlyGrid.style.opacity = "0.5";
     monthlyGrid.classList.remove("visible");
 
     toggleButtons.forEach((button) => {
         button.addEventListener("click", () => {
-            // Supprimer la classe "active" de tous les boutons
             toggleButtons.forEach((btn) => btn.classList.remove("active"));
 
-            // Ajouter la classe "active" au bouton cliqué
             button.classList.add("active");
 
-            // Basculer les grilles en fonction du bouton cliqué
             if (button.textContent.trim() === "Annuels") {
                 yearlyGrid.classList.add("visible");
                 monthlyGrid.style.opacity = "0.5";
