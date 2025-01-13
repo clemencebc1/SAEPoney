@@ -68,6 +68,8 @@ class ActionForm {
         <input type="email" id="email" name="email" required>
         <label for="password">Mot de passe temporaire</label>
         <input type="password" id="password" name="password" required>
+        <label for="confirmPassword">Confirmer le mot de passe</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
         <label for="role">Role</label>
         <select name="role" id="role">
             <option value="ADHERENT">Adherent</option>
@@ -82,9 +84,7 @@ class ActionForm {
     public function render(): string {
         switch ($this->type) {
             case 'registerAdherent':
-                // $render = "test";
                 $render = $this->registerAdherentForm();
-                // $render = "test";
                 break;
             case 'registerMoniteur':
                 $render =   $this->registerMoniteurForm();
