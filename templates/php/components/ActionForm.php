@@ -121,7 +121,7 @@ class ActionForm {
             case 'registerCours':
                 $render =   $this->registerCoursForm();
                 break;
-            case 'action=registerPoney':
+            case 'registerPoney':
                 $render =   $this->registerPoneyForm();
                 break;
             case 'registerSeance':
