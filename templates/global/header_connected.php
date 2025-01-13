@@ -63,7 +63,7 @@
             <div class="logo"><a href="index_connected.php">Logo</a></div>
             <nav>
                 <a href="planning-adherent.php">Votre planning</a>
-                <a href="#">Votre niveau</a>
+                <a href="niveau.php">Votre niveau</a>
                 <a href="factures-adherent.php">Vos factures</a>
                
             </nav>
