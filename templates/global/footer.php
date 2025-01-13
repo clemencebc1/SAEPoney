@@ -93,7 +93,7 @@ footer {
                 <h3>Nous contacter</h3>
                 <ul>
                     <li><a href="tel:+33102030405">Tel : +33 1 02 03 04 05</a></li>
-                    <li><a href="mailto:grandgalop@mail.com">Email : Notre grandgalop@mail.com/a></li>
+                    <li><a href="mailto:grandgalop@mail.com">Email : grandgalop@mail.com</a></li>
                     <li><a href="https://www.google.com/maps">Adresse : 2 rue du grand poney, Sologne</a></li>
                     <li><a href="#">Grand Galop</a></li>
                     <li><a href="#">Formulaire</a></li>
@@ -102,10 +102,10 @@ footer {
             <li class="colonne">
                 <h3>À propos de nous</h3>
                 <ul>
-                    <li><a href="#">Tarifs</a></li>
-                    <li><a href="#">Planning</a></li>
-                    <li><a href="#">Poneys</a></li>
-                    <li><a href="#">Témoignages</a></li>
+                    <li><a href="tarifs.php">Tarifs</a></li>
+                    <li><a href="planning-club.php">Planning</a></li>
+                    <li><a href="poneys.php">Poneys</a></li>
+                    <li><a href="avis.php">Témoignages</a></li>
                 </ul>
             </li>
             <li class="colonne">

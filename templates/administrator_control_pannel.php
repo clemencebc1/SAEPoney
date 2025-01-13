@@ -38,7 +38,7 @@ UserTools::requireLogin();
             echo $actionForm->render();
             if (isset($_GET['action']) && isset($_GET['submit'] )? $_GET['submit'] : false ) {
                 echo "<color style='color: green;'>Formulaire envoyé</color>";
-                echo "<pre>" . print_r($_POST, true) . "</pre>";
+               
             }
             switch (isset($_GET['error']) ? $_GET['error'] : false) {
                 case '1':
