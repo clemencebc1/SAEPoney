@@ -9,7 +9,9 @@ link_to_css('static/actualites.css');?>
     <h1>Ne manquez pas les dernières nouveautés du club</h1>
     <section class="news-container">
       <article class="news-item">
-        <div class="news-image"></div>
+        <div class="news-image">
+          <img id="news-img-1" src="img/actualites-2.jpg" alt="actu1">
+        </div>
         <div class="news-content">
           <h2>Nos adhérents donnent leurs avis !</h2>
           <h3>Page "témoignages"</h3>
@@ -22,7 +24,9 @@ link_to_css('static/actualites.css');?>
         </div>
       </article>
       <article class="news-item">
-        <div class="news-image"></div>
+        <div class="news-image">
+          <img id="news-img-2" src="img/actualites-1.jpg" alt="actu2">
+        </div>
         <div class="news-content">
           <h2>Ouverture du site </h2>
           <h3>Nous ouvrons notre site web</h3>
@@ -36,5 +40,6 @@ link_to_css('static/actualites.css');?>
       </article>
     </section>
   </main>
+  <?php include('global/footer.php') ?>
 </body>
 </html>

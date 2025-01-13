@@ -12,10 +12,10 @@ header {
     border-bottom: 1px solid #ccc;
 }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
+header img {
+    height : 100px;
 }
+
 
 nav {
     display: flex;
@@ -31,8 +31,8 @@ nav a {
     display: flex;
 }
 
-.boutons-log button {
-    flex-wrap: wrap;
+.buttons-log button {
+    flex-wrap: nowrap;
     margin-left: 10px;
     padding: 5px 10px;
     border: 1px solid #ccc;
@@ -61,7 +61,9 @@ a {
 }
 </style>
 <header>
-        <div class="logo"><a href="index.php">Logo</a></div>
+        <div class="logo">
+            <a href="index.php"><img src="img/grand_galot.jpg" alt="logo"></a>
+        </div>
         <nav>
             <a href="tarifs.php">Nos tarifs</a>
             <a href="planning-club.php">Notre planning</a>
