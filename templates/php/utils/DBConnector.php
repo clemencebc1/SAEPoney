@@ -6,8 +6,8 @@ use \PDO;
 class DBConnector {
     private $pdo;
     public function __construct($nombase, $dbuser, $dbpass){
-        // $this->pdo= new PDO('mysql:host=servinfo-maria;dbname='.$nombase.'', $dbuser, $dbpass);
-        $this->pdo= new PDO('mysql:host=localhost;dbname='.$nombase, $dbuser, $dbpass);
+        $this->pdo= new PDO('mysql:host=servinfo-maria;dbname='.$nombase.'', $dbuser, $dbpass);
+        // $this->pdo= new PDO('mysql:host=localhost;dbname='.$nombase, $dbuser, $dbpass);
     }
     
     /**
@@ -81,7 +81,7 @@ class DBConnector {
         $sql = "SELECT * FROM PERSONNE;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $rows;
+        return $rows;
     }
         
     /**
@@ -93,7 +93,7 @@ class DBConnector {
         $sql = "SELECT * FROM MONITEUR;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $rows;
+        return $rows;
     }    
     /**
      * get_adherents, get l'ensemble des adherents dans la base de données
@@ -104,7 +104,7 @@ class DBConnector {
         $sql = "SELECT * FROM ADHERENT;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
-        $rows;
+        return $rows;
     }    
     /**
      * get_factures, get l'ensemble des factures de la base de donnes
@@ -140,19 +140,6 @@ class DBConnector {
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
         return $rows;
-    }
-
-    /**
-     * get_encadrer, get l'ensemble des encadrer de la base de donnees
-     *
-     * @return array ensemble des encadrer
-     */
-    public function get_encadrer_moniteur(int $idmon): void {
-        $sql = "SELECT IDSEANCE FROM ENCADRER WHERE IDMON = ?";
-        $stmt = $this->pdo->prepare($sql);
-        $stmt->execute([$idmon]);
-        $user = $stmt->fetchAll();
-
     }
 
     /**
@@ -204,6 +191,14 @@ class DBConnector {
         $stmt->bindParam(':date', $date);
         $stmt->bindParam(':niveau', $niveau);
         $stmt->execute();
+    }
+
+    public function get_cours_for_moniteur(string $moniteur){
+        $sql = "SELECT DESCRIPTIF, DATEENC FROM ENCADRER NATURAL JOIN SEANCE NATURAL JOIN MONITEUR natural join PERSONNE where IDPER=IDMON and EMAIL='". $moniteur ."'";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        return $rows;
+
     }
 
     /**

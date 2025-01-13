@@ -35,7 +35,6 @@ UserTools::requireLogin();
             <?php
             $type = isset($_GET['action']) ? $_GET['action'] : 'default';
             $actionForm = new ActionForm($type);
-            var_dump($actionForm);
             echo $actionForm->render();
             if (isset($_GET['action']) && isset($_GET['submit'] )? $_GET['submit'] : false ) {
                 echo "<color style='color: green;'>Formulaire envoyé</color>";

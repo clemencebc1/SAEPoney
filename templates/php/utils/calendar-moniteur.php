@@ -1,10 +1,11 @@
 <?php
-
+session_start();
 require_once('../autoloader.php');
 Autoloader::register();
 use utils\DBConnector;
 $connexion = new DBConnector('DBbocquet', 'bocquet', 'bocquet');
-$raws_events = $connexion->get_seances();
+$raws_events = $connexion->get_cours_for_moniteur($_SESSION['user']['username']);
+
 
 header('Content-Type: application/json');
 
@@ -14,16 +15,14 @@ function to_fullcalendar($events){
             $data['title'] = $data['DESCRIPTIF'];
             unset($data['DESCRIPTIF']);       
         }
-        if (isset($data['DATE_SEANCE'])) {
-            $data['start'] = $data['DATE_SEANCE'];
-            unset($data['DATE_SEANCE']);       
+        if (isset($data['DATEENC'])) {
+            $data['start'] = $data['DATEENC'];
+            unset($data['DATEENC']);       
         }
     }
     return $events;
 }
-
 $events = to_fullcalendar($raws_events);
 echo json_encode($events);
-
 
 ?>

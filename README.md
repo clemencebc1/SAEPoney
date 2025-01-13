@@ -11,7 +11,8 @@ Le groupe est constitué de Nathan Randriantsoa *TD2B*, Clemence Bocquet *TD2B* 
 
 ### Prérequis
 Avant de lancer le site web, assurez-vous d'avoir les installations PHP nécessaires (driver mysql)  
-Dans le fichier **constantes** (templates/php/utils/constantes), configurez la connexion avec votre base de données  
+Dans le fichier **constantes** (templates/php/utils/constantes+templates/php/utils/UserTools), configurez la connexion avec votre base de données  
+Suite à différents problèmes d'implémentations : modifiez aussi la connexion à la ligne 6 dans calendar et calendar-adherent
 
 ### Lancement du projet
 Pour lancer le site web :

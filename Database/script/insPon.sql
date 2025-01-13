@@ -222,7 +222,9 @@ Insert into ENCADRER (IDMON, NUMCOURS, DATEENC, IDSEANCE) values
                                                               (11, 6, STR_TO_DATE("16/10/2024:14/10","%d/%m/%Y:%H/%i"), 1),
                                                               (11, 6, STR_TO_DATE("23/10/2024:14/10","%d/%m/%Y:%H/%i"), 4),
                                                               (12, 6, STR_TO_DATE("16/10/2024:10/00","%d/%m/%Y:%H/%i"), 2),
-                                                              (12, 6, STR_TO_DATE("23/10/2024:10/00","%d/%m/%Y:%H/%i"), 5);
+                                                              (12, 6, STR_TO_DATE("23/10/2024:10/00","%d/%m/%Y:%H/%i"), 5),
+                                                              (11, 6,STR_TO_DATE("11/01/2025:14/00", "%d/%m/%Y:%H/%i"),11),
+                                                              (11, 6,STR_TO_DATE("12/01/2025:14/00", "%d/%m/%Y:%H/%i"), 10);
 
 Insert into PARTICIPER (NUMCOURS, IDADH, IDSEANCE, IDPO, PAYE) values
                                                                              (6, 9,1,1,true),
@@ -243,7 +245,7 @@ Insert into PARTICIPER (NUMCOURS, IDADH, IDSEANCE, IDPO, PAYE) values
                                                                              (6, 6,3,4,true),
                                                                              (7, 10,7,4,true),
                                                                              (6, 1, 10, 7, false);
-                                                                             
+
                                                                              ;
 
 Insert into TARIFS (IDTARIF, ANNEE, PRIX) values
@@ -380,7 +382,8 @@ Insert into ETRE_PRESENT (IDFACTURE, IDTARIF) values -- concerne les factures et
                                                   (46,3);
 INSERT INTO USER (MAIL, PASSWORD, ROLE) VALUES 
 ("in@icloud.org", SHA1("LOL123"), "ADHERENT"),
-("vivamus.non@google.edu", SHA1("ADMIN"), "ADMIN");
+("vivamus.non@google.edu", SHA1("ADMIN"), "ADMIN"),
+("carowood@gmail.com", SHA1("MDP"), "MONITEUR");
 
 -- insertions qui ne devraient pas marcher
 update PARTICIPER set PAYE = false where IDADH = 9 and IDSEANCE = 1; -- seance deja payee

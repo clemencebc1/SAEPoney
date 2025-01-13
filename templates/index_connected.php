@@ -16,6 +16,7 @@ UserTools::requireLogin();
     <?php include('global/header_connected.php');  ?>
 
     <main>
+        <?php if (UserTools::isAdherent()):?>
         <section class="next-cours">
             <button class="left">&lt;</button>
             <div class="next-cours-info">
@@ -45,6 +46,22 @@ UserTools::requireLogin();
                 ?>
             </div>
         </section>
+        <?php endif;?>
+        <?php if (UserTools::isMoniteur()): ?>
+        <section class="next-cours">
+            <button class="left">&lt;</button>
+            <div class="next-cours-info">
+                <p class="cours-date">
+                    <?php $cours_user = $connexion->get_cours_for_moniteur($_SESSION['user']['username']); 
+                        $compteur = 0;
+                    ?>
+                     Votre prochain cours a lieu le <strong><?php echo $cours_user[$compteur]["DATEENC"] ?></strong></p>
+                <p class="cours-details"><?php echo $cours_user[$compteur]['DESCRIPTIF'] ?></p>
+                <button class="btn-voir-cours"><a href="planning-adherent.php">Voir tous mes cours</a></button>
+            </div>
+            <button class="right">&gt;</button>
+        </section>
+        <?php endif; ?>
     </main>
     <?php include('global/footer.php') ?>
 </body>

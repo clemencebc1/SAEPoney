@@ -70,12 +70,16 @@
     <header>
         <a href="index.php"><img src="img/grand_galot.jpg" alt="logo"></a>
             <nav>
-                <a href="planning-adherent.php">Votre planning</a>
-                <a href="niveau.php">Votre niveau</a>
-                <a href="factures-adherent.php">Vos factures</a>
-                <?php if (UserTools::isAdmin()):?>
-                <a href="administrator_control_pannel.php">Admin pannel</a>
-                <?php endif;?>
+                <?php if (UserTools::isAdmin()){ 
+                echo "<a href='administrator_control_pannel.php'>Admin pannel</a>"; }
+                else if (UserTools::isAdherent()) {
+                    echo "<a href='planning-adherent.php'>Votre planning</a>
+                <a href='niveau.php'>Votre niveau</a>
+                <a href='factures-adherent.php'>Vos factures</a>";
+                }
+                else {
+                    echo "<a href='planning-moniteur.php'> Votre planning</a>";
+                }?>
             </nav>
 
             <div class="bouton-compte">
