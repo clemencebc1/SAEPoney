@@ -31,7 +31,7 @@ UserTools::requireLogin();
                 </ul>
             </nav>
         </section>
-        <section class="actions">
+        <section class="action">
             <?php
             $type = isset($_GET['action']) ? $_GET['action'] : 'default';
             $actionForm = new ActionForm($type);

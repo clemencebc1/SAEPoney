@@ -9,6 +9,8 @@ class ActionForm {
 
     private function personneBlock(): string {
         return '
+        <div class="side-container">
+        <div id="personal-form">
         <label for="nom">Nom</label>
         <input type="text" id="nom" name="nom" required>
         <label for="prenom">Prénom</label>
@@ -22,14 +24,19 @@ class ActionForm {
         <label for="adresse">Adresse</label>
         <input type="text" id="adresse" name="adresse" required>
         <label for="tel">Téléphone</label>
-        <input type="tel" id="tel" name="tel" required>      
+        <input type="tel" id="tel" name="tel" required>
+        </div>
+        </div>      
         ';
     }
 
     private function registerAdherentForm(): string {
         return '
-        <form action="administrator_control_pannel.php?action=registerAdherent&submit=true" method="post">'
-         . $this->personneBlock() . '
+        <form action="administrator_control_pannel.php?action=registerAdherent&submit=true" method="post">
+        <div id="container">
+        ' . $this->personneBlock() . '
+        <div class="side-container">
+        <div id="custom-form">
         <label for="fincotisation">Fin de cotisation</label>
         <input type="date" id="fincotisation" name="fincotisation" required>
         <label for="niveau">Niveau</label>
@@ -37,13 +44,19 @@ class ActionForm {
             <option value="1">Débutant (1)</option>
             <option value="2">Intermédiaire (2)</option>
         </select>
+        </div>
+        </div>
+        </div>  
         <input type="submit" value="inscrire">
         </form>';
     }
 
     private function registerMoniteurForm(): string {
         return '<form action="administrator_control_pannel.php?action=registerMoniteur&submit=true" method="post">
+        <div id="container">
         ' . $this->personneBlock() . '
+        <div class="side-container">
+        <div id="custom-form">
         <label for="typecontrat">Type de contrat</label>
         <select name="typecontrat" id="typecontrat">
             <option value="CDI">CDI</option>
@@ -52,6 +65,9 @@ class ActionForm {
         </select>
         <label for="dateembauche">Date d\'embauche</label>
         <input type="date" id="dateembauche" name="dateembauche" required>
+        </div>
+        </div>
+        </div> 
         <input type="submit" value="inscrire">
         </form>';
     }
