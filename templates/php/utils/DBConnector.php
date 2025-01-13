@@ -223,5 +223,20 @@ class DBConnector {
         $stmt->execute();
     }
 
+    /**
+     * insertion d'un nouvel user pour une personne
+     * @param string email de la personne
+     * @param string password de la personne
+     * @param string role de la personne
+     */
+    public function insert_user(string $email, string $hashedPassword, string $role): void {
+        $sql = "INSERT INTO USER (MAIL, PASSWORD, ROLE) VALUES (:email, :password, :role)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $hashedPassword);
+        $stmt->bindParam(':role', $role);
+        $stmt->execute();
+    }
+
 }
 ?>
