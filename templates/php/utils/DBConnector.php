@@ -182,7 +182,7 @@ class DBConnector {
     // }
 
     public function insertion_adherent(int $idadh, string $date, string $niveau): void {
-        $sql = "INSERT INTO ADHERENT (IDADH, FINCOTISATION, NIVEAUGALOT) VALUES (:id, STR_TO_DATE(':date', '%d-%m-%Y'), :niveau)";
+        $sql = "INSERT INTO ADHERENT (IDADH, FINCOTISATION, NIVEAUGALOT) VALUES (:id, :date, :niveau)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $idadh);
         $stmt->bindParam(':date', $date);
@@ -191,7 +191,7 @@ class DBConnector {
     }
 
     public function insertion_moniteur(int $idmon, $contract, string $date): void {
-        $sql = "INSERT INTO MONITEUR (IDMON, TYPECONTRAT, DATEEMBAUCHE) VALUES (:id, :contract, STR_TO_DATE(':date', '%d-%m-%Y'))";
+        $sql = "INSERT INTO MONITEUR (IDMON, TYPECONTRAT, DATEEMBAUCHE) VALUES (:id, :contract, :date)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->bindParam(':id', $idmon);
         $stmt->bindParam(':contract', $contract);
