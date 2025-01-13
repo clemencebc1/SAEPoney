@@ -58,15 +58,26 @@
 
 
 </style>
+    <?php
+    session_start();    
+    require_once __DIR__ . '/../php/autoloader.php';
+    Autoloader::register();
+    use utils\UserTools;
+    UserTools::requireLogin();
+    ?>
 
+   
     <header>
         <a href="index.php"><img src="img/grand_galot.jpg" alt="logo"></a>
             <nav>
                 <a href="planning-adherent.php">Votre planning</a>
                 <a href="niveau.php">Votre niveau</a>
                 <a href="factures-adherent.php">Vos factures</a>
-               
+                <?php if (UserTools::isAdmin()):?>
+                <a href="administrator_control_pannel.php">Admin pannel</a>
+                <?php endif;?>
             </nav>
+
             <div class="bouton-compte">
                 <button class="compte-view"><a href="logout.php">Mon compte</a></button>
             </div>

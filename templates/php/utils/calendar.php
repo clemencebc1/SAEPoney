@@ -2,7 +2,7 @@
 require_once('../autoloader.php');
 Autoloader::register();
 use utils\DBConnector;
-$connexion = new DBConnector('DBbocquet', 'bocquet', 'bocquet');
+$connexion = new DBConnector('SAEPONEY', 'nathan', 'Nath2005');
 $raws_events = $connexion->get_seances();
 
 header('Content-Type: application/json');

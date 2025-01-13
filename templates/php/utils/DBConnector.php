@@ -6,8 +6,8 @@ use \PDO;
 class DBConnector {
     private $pdo;
     public function __construct($nombase, $dbuser, $dbpass){
-        $this->pdo= new PDO('mysql:host=servinfo-maria;dbname='.$nombase.'', $dbuser, $dbpass);
-        //$this->pdo= new PDO('mysql:host=localhost;dbname='.$nombase);
+        // $this->pdo= new PDO('mysql:host=servinfo-maria;dbname='.$nombase.'', $dbuser, $dbpass);
+        $this->pdo= new PDO('mysql:host=localhost;dbname='.$nombase, $dbuser, $dbpass);
     }
     
     /**
@@ -141,6 +141,12 @@ class DBConnector {
         $rows = $stmt->fetchAll();
         return $rows;
     }
+
+    /**
+     * get_encadrer, get l'ensemble des encadrer de la base de donnees
+     *
+     * @return array ensemble des encadrer
+     */
     public function get_encadrer_moniteur(int $idmon): void {
         $sql = "SELECT IDSEANCE FROM ENCADRER WHERE IDMON = ?";
         $stmt = $this->pdo->prepare($sql);
@@ -149,6 +155,73 @@ class DBConnector {
 
     }
 
+    /**
+     * get_next_id_personne, get l'identifiant de la prochaine personne
+     *
+     * @return int identifiant de la prochaine personne
+     */
+    public function get_next_id_personne(): int {
+        $sql = "SELECT MAX(IDPER) FROM PERSONNE";
+        $stmt = $this->pdo->query($sql);
+        $id = $stmt->fetch();
+        return $id[0] + 1;
+    }
+
+
+    /**
+     * insertion_personne, insere une personne dans la base de donnees
+     *
+     * @param  int future id de la personne
+     * @param  string nom de la personne
+     * @param  string prenom de la personne
+     * @param  string email de la personne
+     * @param  string date_naissancevde la personne
+     * @param  string poids de la personne
+     * @param  string adresse de la personne
+     * @param  string tel de la personne
+     * @return void
+     */
+    public function insertion_personne(int $id ,string $nom, string $prenom, string $email, string $date_naissance, string $poids, string $adresse,string $tel): void {
+        $sql = "INSERT INTO PERSONNE (IDPER, NOMPER, PRENOMPER, EMAIL, DDNPER, POIDS, ADRESSE, PORTABLE) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$id, $nom, $prenom, $email, $date_naissance, $poids, $adresse, $tel]);
+    }
+
+    
+
+    /**
+     * insertion_adherent, insere un adherent dans la base de donnees
+     *
+     * @param  int future id de l'adherent
+     * @param  string date de fin de cotisation
+     * @param  string niveau de l'adherent
+     * @return void
+     */
+    public function insertion_adherent(int $idadh, string $date, string $niveau): void {
+        $sql = "INSERT INTO ADHERENT (IDADH, FINCOTISATION, NIVEAUGALOT) VALUES (:id, :date, :niveau)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $idadh);
+        $stmt->bindParam(':date', $date);
+        $stmt->bindParam(':niveau', $niveau);
+        $stmt->execute();
+    }
+
+    /**
+     * insertion_moniteur, insere un moniteur dans la base de donnees
+     *
+     * @param  int future id du moniteur
+     * @param  string type de contrat
+     * @param  string date d'embauche
+     * @return void
+     */
+    public function insertion_moniteur(int $idmon, $contract, string $date): void {
+        $sql = "INSERT INTO MONITEUR (IDMON, TYPECONTRAT, DATEEMBAUCHE) VALUES (:id, :contract, :date)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':id', $idmon);
+        $stmt->bindParam(':contract', $contract);
+        $stmt->bindParam(':date', $date);
+        $stmt->execute();
+    }
 
 }
 ?>

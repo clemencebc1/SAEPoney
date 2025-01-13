@@ -7,8 +7,8 @@ use \PDO;
 class UserTools {
     
     private static function checkDB($username, $password) {
-        $db = new PDO('mysql:host=servinfo-maria;dbname=DBbocquet', 'bocquet', 'bocquet');
-        //$db = new PDO('mysql:host=localhost;dbname=SAEPONEY', 'nathan', 'Nath2005');
+        // $db = new PDO('mysql:host=servinfo-maria;dbname=DBbocquet', 'bocquet', 'bocquet');
+        $db = new PDO('mysql:host=localhost;dbname=SAEPONEY', 'nathan', 'Nath2005');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $hash = hash('sha1', $password);
         $query = $db->prepare('SELECT * FROM USER WHERE MAIL = :username AND PASSWORD = :password');
@@ -60,6 +60,14 @@ class UserTools {
 
     public static function getUserToken() {
         return $_SESSION['user']['token'];
+    }
+
+    public static function getUserRole() {
+        return $_SESSION['user']['role'];
+    }
+
+    public static function isAdmin() {
+        return self::getUserRole() === 'ADMIN';
     }
 }
 ?>
