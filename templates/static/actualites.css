@@ -27,14 +27,22 @@
   
   .news-image {
     flex: 0 0 150px;
-    height: 150px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
+    align-self: center;
   }
+
+  #news-img-1 {
+    height: 200px;
+  }
+
+  #news-img-2 {
+    height: 300px;
+  }
+
   
   .news-content {
     flex: 1;
     text-align: left;
+    align-self: center;
   }
   
   .news-content h2 {
