@@ -25,11 +25,27 @@ link_to_css('static/planning.css');?>
                 
                 let calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: 'dayGridMonth', 
-                    locale: 'fr',               
+                    locale: 'fr',  
+                    headerToolbar: {
+                        left: 'prev,next today', 
+                        center: 'title',
+                        right: 'dayGridMonth,timeGridWeek,timeGridDay' 
+                    },             
                     events: 'php/utils/calendar-adherent.php', 
-                    dateClick: function (info) {
-                        alert('Date cliquée : ' + info.dateStr); 
-                    },
+                    eventClick: function (info) {
+                        let eventTitle = info.event.title || "(Pas de titre)";
+                        let eventDate = info.event.start.toLocaleDateString('fr-FR');
+
+                        let participation = confirm(`Souhaitez-vous participer à l'événement "${eventTitle}" prévu le ${eventDate} ?`);
+
+                        if (participation) {
+                           
+                            alert(`Vous avez choisi de participer à l'événement "${eventTitle}".`);
+                            
+                        } else {
+                            alert("Participation annulée.");
+            }
+        }
                 });
         
                 calendar.render();

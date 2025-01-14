@@ -16,7 +16,12 @@ link_to_css('static/planning.css');?>
         
         let calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth', 
-            locale: 'fr',               
+            locale: 'fr',
+            headerToolbar: {
+                        left: 'prev,next today', 
+                        center: 'title',
+                        right: 'dayGridMonth,timeGridWeek,timeGridDay' 
+            },                 
             events: 'php/utils/calendar.php', 
             dateClick: function (info) {
                 alert('Date cliquée : ' + info.dateStr); 
