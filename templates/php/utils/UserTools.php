@@ -11,7 +11,7 @@ class UserTools {
         // $db = new PDO('mysql:host=localhost;dbname=SAEPONEY', 'nathan', 'Nath2005');
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $hash = hash('sha1', $password);
-        $query = $db->prepare('SELECT * FROM USER WHERE MAIL = :username AND PASSWORD = :password');
+        $query = $db->prepare('SELECT MAIL, ROLE, IDPER FROM USER natural join PERSONNE WHERE MAIL = :username AND PASSWORD = :password');
         $query->execute(array('username' => $username, 'password' => $hash));
         $result = $query->fetch();
         return $result;
@@ -21,7 +21,7 @@ class UserTools {
         $user = self::checkDB($username, $password);
         $status = false;
         if ($user) {
-            $_SESSION['user'] = array('username' => $user['MAIL'], 'token' => self::generateToken(), 'role' => $user['ROLE']);
+            $_SESSION['user'] = array('username' => $user['MAIL'], 'token' => self::generateToken(), 'role' => $user['ROLE'], 'iduser' => $user['IDPER']);
             $status = true;
         }
         return $status;

@@ -216,7 +216,9 @@ values (1, 25, 1, 1, "baby poney", "moins de 6 ans", 6, STR_TO_DATE("16/10/2024:
        (7, 46, 1,1, "groom individuel", " - ", 7,STR_TO_DATE("24/10/2024:14/00","%d/%m/%Y:%H/%i")),
        (9, 26,2,1,"groom collectif", " - ", 6, STR_TO_DATE("13/01/2025:14/00", "%d/%m/%Y:%H/%i")),
        (10, 26,2,1,"groom collectif", " - ", 6, STR_TO_DATE("12/01/2025:14/00", "%d/%m/%Y:%H/%i")),
-       (11, 28,2,1,"baby poney", " - ", 6, STR_TO_DATE("11/01/2025:14/00", "%d/%m/%Y:%H/%i"));
+       (11, 28,2,1,"baby poney", " - ", 6, STR_TO_DATE("11/01/2025:14/00", "%d/%m/%Y:%H/%i")),
+       (13, 28,2,1,"baby poney", " - ", 6, STR_TO_DATE("19/01/2025:14/00", "%d/%m/%Y:%H/%i"));
+       (12, 28,2,1,"baby poney", " - ", 6, STR_TO_DATE("16/01/2025:14/00", "%d/%m/%Y:%H/%i"));
 
 Insert into ENCADRER (IDMON, NUMCOURS, DATEENC, IDSEANCE) values
                                                               (11, 6, STR_TO_DATE("16/10/2024:14/10","%d/%m/%Y:%H/%i"), 1),

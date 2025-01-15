@@ -4,7 +4,10 @@
 title_html('Planning');
 link_to_css('https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css');
 link_to_css('static/planning.css');?>
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js"></script>
+
+
 
 <body>
     <?php include('global/header.php'); ?>

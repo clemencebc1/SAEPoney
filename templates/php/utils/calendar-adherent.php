@@ -18,8 +18,8 @@ function to_fullcalendar($events){
             $data['start'] = $data['DATE_SEANCE'];
             unset($data['DATE_SEANCE']);       
         }
-        $events['color']='#ff0000';
-        $events['type']="my";
+        $data['backgroundColor']='blue';
+        $data['type']="my";
     }
     return $events;
 }

@@ -53,10 +53,31 @@ class DBConnector {
     }
     
     public function get_seances_for_user(string $user){
-        $sql = "SELECT DISTINCT DESCRIPTIF, DATE_SEANCE FROM SEANCE NATURAL JOIN PARTICIPER NATURAL JOIN ADHERENT NATURAL JOIN PERSONNE WHERE EMAIL='in@icloud.org' AND IDADH=IDPER;";
+        $sql = "SELECT DISTINCT DESCRIPTIF, DATE_SEANCE FROM SEANCE NATURAL JOIN PARTICIPER NATURAL JOIN ADHERENT NATURAL JOIN PERSONNE WHERE EMAIL='" .$user ."' AND IDADH=IDPER;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
         return $rows;
+    }
+
+    public function get_notseances_for_user(string $user){
+        $sql = "SELECT DISTINCT DESCRIPTIF, DATE_SEANCE, IDSEANCE, NUMCOURS FROM SEANCE NATURAL JOIN PARTICIPER NATURAL JOIN ADHERENT NATURAL JOIN PERSONNE WHERE DATE_SEANCE not in (SELECT DATE_SEANCE FROM SEANCE NATURAL JOIN PARTICIPER NATURAL JOIN ADHERENT NATURAL JOIN PERSONNE WHERE EMAIL='" . $user ."' and IDADH=IDPER) and IDADH=IDPER";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        return $rows;
+    }
+
+    /**recupere un poney qui n'a pas cours*/
+    public function poney_libre($idseance){
+        $sql = "SELECT IDPO FROM PONEY where IDPO not in (select IDPO from PONEY NATURAL JOIN PARTICIPER WHERE IDSEANCE=" . intval($idseance) ."); ";
+        $stmt = $this->pdo->query($sql);
+        $rows = $stmt->fetchAll();
+        return $rows[0];
+    }
+
+    public function insert_seance($idpo, $idseance, $numcours, $idadh){
+        $sql = "INSERT into PARTICIPER (NUMCOURS, IDPO, IDADH, PAYE, IDSEANCE) values (" . intval($numcours). "," . intval($idpo) . ",". intval($idadh). ", false, ". intval($idseance). ");";
+        $stmt = $this->pdo->query($sql);
+
     }
 
 
@@ -124,7 +145,6 @@ class DBConnector {
      * @return array ensemble des factures d'un utilisateur
      */
     public function get_factures_user(string $user){
-        $user = "in@icloud.org";
         $sql = "SELECT DATEEDITION, PAYE, TOTALTTC, DESCRIPTIF FROM FACTURE NATURAL JOIN PERSONNE NATURAL JOIN PARTICIPER NATURAL JOIN SEANCE WHERE IDADH=IDPER AND EMAIL='". $user ."'";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();

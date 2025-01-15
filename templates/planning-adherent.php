@@ -18,6 +18,10 @@ link_to_css('static/planning.css');?>
 <body>
     <?php include('global/header_connected.php'); ?>
     <main>
+        <?php if (in_array('Exception', array_keys($_SESSION))){
+            echo "<h2> Votre cours n'a pas pu être ajouté car". $_SESSION['Exception'] . "</h2>";
+        }
+            ?>
         <div id="calendar"></div>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -31,21 +35,47 @@ link_to_css('static/planning.css');?>
                         center: 'title',
                         right: 'dayGridMonth,timeGridWeek,timeGridDay' 
                     },             
-                    events: 'php/utils/calendar-adherent.php', 
+                    eventSources: [
+                        {
+                        url: 'php/utils/calendar-noparticipation.php',
+                    },
+                    {
+                        url: 'php/utils/calendar-adherent.php', 
+                    }   
+                        ],
                     eventClick: function (info) {
-                        let eventTitle = info.event.title || "(Pas de titre)";
-                        let eventDate = info.event.start.toLocaleDateString('fr-FR');
-
+                    try {
+                    let eventTitle = info.event.title || "(Pas de titre)";
+                    let eventDate = info.event.start ? info.event.start.toLocaleDateString('fr-FR') : "(Date inconnue)";
+                    let eventColor = info.event.backgroundColor|| 'default';
+                    console.log("Couleur de l'événement :", info.event.color);
+                    if (eventColor == 'green') {
                         let participation = confirm(`Souhaitez-vous participer à l'événement "${eventTitle}" prévu le ${eventDate} ?`);
-
+        
                         if (participation) {
-                           
                             alert(`Vous avez choisi de participer à l'événement "${eventTitle}".`);
-                            
-                        } else {
-                            alert("Participation annulée.");
-            }
-        }
+                            let form = document.createElement("form");
+                            form.method = "POST";
+                            form.action = "php/utils/participer.php";
+                            let input = document.createElement("input");
+                            input.type = "hidden";
+                            input.name = 'IDSEANCE';
+                            input.value = info.event.extendedProps.IDSEANCE;
+                            form.appendChild(input);
+                            let input2 = document.createElement("input");
+                            input2.name = 'NUMCOURS';
+                            input2.value = info.event.extendedProps.NUMCOURS;
+                            form.appendChild(input2);
+                            document.body.appendChild(form);
+                            form.submit();
+                        } 
+                    } else {
+                        alert("Vous participez déjà à l'évenement.");
+                    }
+                    } catch (error) {
+                    console.error("Erreur dans eventClick:", error);
+                    }
+                }
                 });
         
                 calendar.render();
