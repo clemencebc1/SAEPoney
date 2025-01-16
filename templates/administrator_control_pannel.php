@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'php/autoloader.php';
 Autoloader::register();
 use utils\UserTools;
@@ -8,17 +7,7 @@ use utils\DBConnector;
 UserTools::requireLogin();
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-    <?php require_once('php/utils/constantes.php');
-    include 'global/head.php'; 
-    title_html('Administrateur home');
-    link_to_css('static/accueil_2.css'); 
-    link_to_css('static/administrator_control_pannel.css');?>
-<body>
-    <?php include('global/header_connected.php');  ?>
 
-    <main>
         <section class="action-bar">
             <nav>
                 <ul>
@@ -55,10 +44,6 @@ UserTools::requireLogin();
             }
             ?>
         </section>
-    </main>
-    <?php include('global/footer.php') ?>
-</body>
-</html>
 
 <?php
 
@@ -77,7 +62,8 @@ if (isset($_GET['action']) && isset($_GET['submit'] )? $_GET['submit'] : false )
             $db -> insertion_moniteur($nextId, $_POST['typecontrat'], $_POST['dateembauche']);
             break;
         case 'registerCours':
-            echo "<color style='color: green;'>Not yet implemented</color>";
+            $nextId = $db->get_next_numcours();
+            $db->insertion_cours($nextId, $_POST['cours'], $_POST['typec']);
             break;
         case 'registerPoney':
             echo "<color style='color: green;'>Not yet implemented</color>";
@@ -105,7 +91,7 @@ if (isset($_GET['action']) && isset($_GET['submit'] )? $_GET['submit'] : false )
                     header('Location: administrator_control_pannel.php?error=1');
                 }
             }
-            // echo "password: $password, confirm: $confirmPassword";
+
             break;
         default:
             break;

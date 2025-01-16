@@ -53,7 +53,7 @@ class DBConnector {
     }
     
     public function get_seances_for_user(string $user){
-        $sql = "SELECT DISTINCT DESCRIPTIF, DATE_SEANCE FROM SEANCE NATURAL JOIN PARTICIPER NATURAL JOIN ADHERENT NATURAL JOIN PERSONNE WHERE EMAIL='" .$user ."' AND IDADH=IDPER;";
+        $sql = "SELECT DISTINCT DESCRIPTIF, DATE_SEANCE FROM SEANCE NATURAL JOIN PARTICIPER NATURAL JOIN ADHERENT NATURAL JOIN PERSONNE WHERE EMAIL='" .$user ."' AND IDADH=IDPER order by DATE_SEANCE;";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
         return $rows;
@@ -145,7 +145,7 @@ class DBConnector {
      * @return array ensemble des factures d'un utilisateur
      */
     public function get_factures_user(string $user){
-        $sql = "SELECT DATEEDITION, PAYE, TOTALTTC, DESCRIPTIF FROM FACTURE NATURAL JOIN PERSONNE NATURAL JOIN PARTICIPER NATURAL JOIN SEANCE WHERE IDADH=IDPER AND EMAIL='". $user ."'";
+        $sql = "SELECT DATEEDITION, PAYE, TOTALTTC, IDFACTURE, DESCRIPTIF FROM FACTURE NATURAL JOIN PERSONNE NATURAL JOIN PARTICIPER NATURAL JOIN SEANCE WHERE IDADH=IDPER AND EMAIL='". $user ."' order by DATE_SEANCE";
         $stmt = $this->pdo->query($sql);
         $rows = $stmt->fetchAll();
         return $rows;
@@ -169,6 +169,16 @@ class DBConnector {
      */
     public function get_next_id_personne(): int {
         $sql = "SELECT MAX(IDPER) FROM PERSONNE";
+        $stmt = $this->pdo->query($sql);
+        $id = $stmt->fetch();
+        return $id[0] + 1;
+    }
+
+    /**
+     * get le prochain id pour un cours
+     */
+    public function get_next_numcours(): int {
+        $sql = "SELECT MAX(NUMCOURS) FROM COURS";
         $stmt = $this->pdo->query($sql);
         $id = $stmt->fetch();
         return $id[0] + 1;
@@ -210,6 +220,15 @@ class DBConnector {
         $stmt->bindParam(':id', $idadh);
         $stmt->bindParam(':date', $date);
         $stmt->bindParam(':niveau', $niveau);
+        $stmt->execute();
+    }
+
+    public function insertion_cours($numcours, $nom, $type){
+        $sql = "INSERT INTO COURS (NUMCOURS, NOMCOURS, TYPEC) VALUES (:numcours, :nom, :typec)";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->bindParam(':numcours', $numcours);
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':type', $typec);
         $stmt->execute();
     }
 

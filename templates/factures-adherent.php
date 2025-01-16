@@ -21,12 +21,17 @@ catch (Exception $e) {
     <main></main>
     <div class="container">
         <h1>Vos factures</h1>
-        <?php foreach($factures as $facture){
+        <?php $autres_factures = array();
+        foreach($factures as $facture){
+            if (!in_array($facture['IDFACTURE'], $autres_factures)){
+                $autres_factures[$facture['IDFACTURE']] = array($facture['DESCRIPTIF'], $facture['DATEEDITION'], $facture['PAYE']);}
+        }
+        foreach($autres_factures as $facture){
                 ?>
         <div class="bloc">
             <div class="facture-header">
                 <?php
-                if($facture["PAYE"]==0){
+                if($facture[2]==0){
                     echo "&#x1F6A8;";
                     echo "<style> border-left: 5px solid #2ecc71;</style>";
                 }
@@ -35,11 +40,11 @@ catch (Exception $e) {
                     echo "<style> border-left: 5px solid #e74c3c;</style>";
 
                 }
-                echo "<h3> Facture du " . $facture["DATEEDITION"] . "</h3>";
+                echo "<h3> Facture du " . $facture[1] . "</h3>";
                 ?>
             </div>
-            <div><?php echo "Facture du cours " . $facture["DESCRIPTIF"] . " - " .  $facture["DATEEDITION"]; ?>
-            <?php if ($facture["PAYE"]==0){ echo "<br>Vous possédez d'un délai de deux semaines pour régler votre facture. Il vous reste 8 jours.</p>" ; } ?>
+            <div><?php echo "Facture du cours " . $facture[0] . " - " .  $facture[1]; ?>
+            <?php if ($facture[2]==0){ echo "<br>Vous possédez d'un délai de deux semaines pour régler votre facture. Il vous reste 8 jours.</p>" ; } ?>
         </div> </div> 
         <?php } ?>
     </div>

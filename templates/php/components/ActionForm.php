@@ -79,7 +79,21 @@ class ActionForm {
         </form>';
     }
 
-    private function registerCoursForm(): string {return '<h1> Fonction bientôt disponible </h1>';}
+    private function registerCoursForm(): string {return '<form action="administrator_control_pannel.php?action=registerUser&submit=true" method="post">
+        <div id="title">
+        <h1> Ajout de cours </h1>
+        </div>
+        <div id="custom-form">
+        <label for="text">Nom du cours</label>
+        <input type="text" id="cours" name="cours" required>
+        <label for="text">Type cours (individuel ou collectif)</label>
+        <select name="typec" id="typec">
+            <option value="Individuel">Individuel</option>
+            <option value="Collectif">Collectif</option>
+        </select>
+        </div>
+        <input type="submit" value="inscrire">
+        </form>';}
 
     private function registerPoneyForm(): string {return '<h1> Fonction bientôt disponible </h1>';}
 
