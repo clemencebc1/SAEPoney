@@ -15,7 +15,7 @@ if (UserTools::isLogged()) {
 // phpinfo();
 include 'global/head.php'; 
 title_html('Poney Club');
-link_to_css('static/accueil.css'); ?>
+link_to_css('static/notconnected/accueil.css'); ?>
 
 <body>
     <?php include('global/header.php');  ?>

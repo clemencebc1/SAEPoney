@@ -2,7 +2,7 @@
 <html lang="fr">
 <?php include('global/head.php'); 
 title_html('Actualites');
-link_to_css('static/actualites.css');?>
+link_to_css('static/notconnected/actualites.css');?>
 <body>
     <?php include('global/header.php'); ?>
     <main class="main">

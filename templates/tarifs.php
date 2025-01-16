@@ -2,7 +2,7 @@
 <html lang="fr">
 <?php include 'global/head.php'; 
 title_html('Nos Tarifs');
-link_to_css('static/tarifs.css');
+link_to_css('static/notconnected/tarifs.css');
 ?>
 <script> 
     // PRODUIT A L'AIDE DE CHATPGT

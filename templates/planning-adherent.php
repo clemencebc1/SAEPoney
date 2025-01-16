@@ -35,6 +35,7 @@ link_to_css('static/planning.css');?>
                 <li><span class="event-color" style="background-color: #0000ff;"></span> Cours inscrit</li>
             </ul>
         </div>
+        <!-- une partie du javascript a été généré par chatgpt -->
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 let calendarEl = document.getElementById('calendar');

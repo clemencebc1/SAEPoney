@@ -3,7 +3,7 @@
 <html lang="fr">
 <?php include('global/head.php'); 
 title_html('Avis');
-link_to_css('static/avis.css');?>
+link_to_css('static/notconnected/avis.css');?>
 <body>
     <?php include('global/header.php'); ?>
     <main>

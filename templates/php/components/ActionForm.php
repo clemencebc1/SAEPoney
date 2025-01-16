@@ -79,7 +79,7 @@ class ActionForm {
         </form>';
     }
 
-    private function registerCoursForm(): string {return '<form action="administrator_control_pannel.php?action=registerUser&submit=true" method="post">
+    private function registerCoursForm(): string {return '<form action="administrator_control_pannel.php?action=registerCours&submit=true" method="post">
         <div id="title">
         <h1> Ajout de cours </h1>
         </div>

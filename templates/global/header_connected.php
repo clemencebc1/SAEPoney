@@ -78,6 +78,10 @@
                 }
                 else if (UserTools::isMoniteur()){
                     echo "<a href='planning-moniteur.php'> Votre planning</a>";
+                }
+                else {
+                    echo "<a href='administrator_control_pannel.php'> Pannel ajouts</a>";
+                    echo "<a href='gestion.php'>Pannel gestion </a>";
                 }?>
             </nav>
 

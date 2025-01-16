@@ -16,6 +16,7 @@ UserTools::requireLogin();
     <?php include('global/header_connected.php');  ?>
 
     <main>
+
         <?php if (UserTools::isAdherent()):?>
         <section class="next-cours">
             <button class="left">&lt;</button>
@@ -62,10 +63,6 @@ UserTools::requireLogin();
             <button class="right">&gt;</button>
         </section>
         <?php endif; ?>
-        <?php if (UserTools::isAdmin()){
-            link_to_css('static/administrator_control_pannel.css');
-            include('administrator_control_pannel.php');
-        } ?>
     </main>
     <?php include('global/footer.php') ?>
 </body>

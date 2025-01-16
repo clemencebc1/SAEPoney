@@ -2,7 +2,7 @@
 <html lang="fr">
 <?php include('global/head.php'); 
 title_html('Inscription');
-link_to_css('static/inscription.css');?>
+link_to_css('static/notconnected/inscription.css');?>
 <body>
     <?php include('global/header.php'); ?>
     <main>

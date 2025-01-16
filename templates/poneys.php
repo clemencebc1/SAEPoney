@@ -3,7 +3,7 @@
 <?php require_once('php/utils/constantes.php');
 include('global/head.php'); 
 title_html('Poneys');
-link_to_css('static/poneys.css');
+link_to_css('static/notconnected/poneys.css');
 $poneys = $connexion->get_poneys();?>
 <body>
     <?php include('global/header.php'); ?>
