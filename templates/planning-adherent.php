@@ -21,8 +21,20 @@ link_to_css('static/planning.css');?>
         <?php if (in_array('Exception', array_keys($_SESSION))){
             echo "<h2> Votre cours n'a pas pu être ajouté car". $_SESSION['Exception'] . "</h2>";
         }
+        else {
+            echo "<h2>Vous êtes inscrit</h2>";
+        }
             ?>
-        <div id="calendar"></div>
+        <div id="calendar">
+    
+        </div>
+        <div id="legend">
+            <h3>Légende des événements</h3>
+            <ul>
+                <li><span class="event-color" style="background-color: #00ff00;"></span> Cours non inscrit</li>
+                <li><span class="event-color" style="background-color: #0000ff;"></span> Cours inscrit</li>
+            </ul>
+        </div>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 let calendarEl = document.getElementById('calendar');
