@@ -34,4 +34,6 @@ Les fonctionnalités implémentées avant la soutenance sont :
 
 #### Après soutenance
 Les fonctionnalités implémentées après la soutenance sont : 
-- 
+- Un adhérent peut s'inscrire à un cours depuis son planning
+- Un administrateur peut ajouter un cours dans la base de données
+- Tableau de gestion (modification/suppression) des cours (non fonctionnel)
