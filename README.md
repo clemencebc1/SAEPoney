@@ -9,6 +9,7 @@ Le groupe est constitué de Nathan Randriantsoa *TD2B*, Clemence Bocquet *TD2B* 
 - prérequis
 - lancement du projet
 - fonctionnalités implémentées avant et après soutenance
+- lien fileSender
 
 ### Prérequis
 Avant de lancer le site web, assurez-vous d'avoir les installations PHP nécessaires (driver mysql)  
@@ -37,3 +38,6 @@ Les fonctionnalités implémentées après la soutenance sont :
 - Un adhérent peut s'inscrire à un cours depuis son planning
 - Un administrateur peut ajouter un cours dans la base de données
 - Tableau de gestion (modification/suppression) des cours (non fonctionnel)
+
+### Lien FileSender
+Le lien vers la vidéo montrant les fonctionnalités après soutenance : [https://filesender.renater.fr/?s=download&token=6167bb86-c505-44b4-8f24-061c6f2fd21f]
